@@ -4,7 +4,7 @@
 
 ## Empezando
 
-Instalación del firmware micropython
+[Instalación del firmware micropython](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html)
 
 1. Borramos la flash
 

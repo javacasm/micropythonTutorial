@@ -78,30 +78,25 @@ Vamos a usar ahora el [relé del shield de wemos](https://wiki.wemos.cc/products
         pReleWemos.off()  
 
 
-## Neopixel
+## Ficheros
 
-from machine import Pin
-from neopixel import NeoPixel
+Podemos ver el contenido del sistema de archivos con
 
-Height = 8
-Width = 32
-Num_Pixels = Height * Width
+There are two files that are treated specially by the ESP8266 when it starts up: boot.py and main.py. The boot.py script is executed first (if it exists) and then once it completes the main.py script is executed. You can create these files yourself and populate them with the code that you want to run when the device starts up.
 
-RowsXColor = 6
 
-pin = Pin(0, Pin.OUT)   # set GPIO0 to output to drive NeoPixels
-np = NeoPixel(pin, Num_Pixels) 
+        import os
+        
+        os.listdir()
 
-NumSteps = Height * RowsXColor 
+        You can make directories:
 
-for i in range(0 , NumSteps):
-     np[i] = (i,0,0)
-     np[i + NumSteps ] = (i,i,0)
-     np[i + 2 * NumSteps ] = (0,i,0)
-     np[i + 3 * NumSteps ] = (0,i,i)
-     np[i + 4 * NumSteps ] = (0,0,i)
+        >>> os.mkdir('dir')
+        And remove entries:
 
-np.write()
+        >>> os.remove('data.txt')
+
+
 
 ## Trabajando con modulos
 

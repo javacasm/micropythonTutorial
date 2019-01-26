@@ -98,9 +98,21 @@ There are two files that are treated specially by the ESP8266 when it starts up:
 
 
 
-## Trabajando con modulos
+## Trabajando con ficheros
 
 You can use rshell, ampy, WEB_REPL, etc.
+
+## Mo'dulos o librer'ias
+
+[Librer'ias](https://docs.micropython.org/en/latest/library/index.html)
+
+Podemos ver los m'odulos disponibles con 
+
+        help('modules')
+        
+Y podemos obtener ayuda de objeto    concreto con 
+
+        help(objeto)
 
 ## Wemos D1 mini
 

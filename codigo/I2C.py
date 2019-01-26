@@ -5,6 +5,8 @@ from machine import Pin, I2C
 # construct an I2C bus
 i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000) # Se puede usar cualquier pin
 
+# https://gist.github.com/projetsdiy/f4330be62589ab9b3da1a4eacc6b6b1
+    
 print('Scan i2c bus...')
 devices = i2c.scan()
 

@@ -114,6 +114,12 @@ Y podemos obtener ayuda de objeto    concreto con
 
         help(objeto)
 
+## IDEs
+
+### uPyCraft
+
+http://icircuit.net/nodemcu-getting-started-micropython/2406
+
 ## Wemos D1 mini
 
 [Especificación Wemos D1](https://wiki.wemos.cc/products:d1:d1_mini)

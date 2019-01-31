@@ -130,6 +130,8 @@ http://icircuit.net/nodemcu-getting-started-micropython/2406
 
 ## Recursos
 
+[Multitud de librer'ias](https://github.com/micropython/micropython-lib)
+
 [Arranque del ESP8266](https://docs.micropython.org/en/latest/esp8266/general.html#boot-process)
 
 [Especificación del ESP8266](https://docs.micropython.org/en/latest/esp8266/general.html#technical-specifications-and-soc-datasheets)
@@ -148,5 +150,6 @@ http://icircuit.net/nodemcu-getting-started-micropython/2406
 [Termometro](https://github.com/mcauser/MicroPython-ESP8266-DHT-Nokia-5110)
 
 [Conway Game of life](https://github.com/mcauser/MicroPython-ESP8266-Nokia-5110-Conways-Game-of-Life#configure-access-point)
+
 
 

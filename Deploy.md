@@ -33,8 +33,10 @@ Example with Ampy:
 **Validating the UMQTT package install**
 From the REPL (using Putty, etc) execute the following commands and observe similar output
 
->>> from umqtt.robust import MQTTClient
+        >>> from umqtt.robust import MQTTClient
 
->>> dir(MQTTClient)
-['reconnect', 'log', 'publish', '__module__', 'wait_msg', 'delay', '__qualname__', 'DELAY', 'DEBUG']
+        >>> dir(MQTTClient)
+        ['reconnect', 'log', 'publish', '__module__', 'wait_msg', 'delay', '__qualname__', 'DELAY', 'DEBUG']
+        
+        
 If you see this result you have successfully installed the umqtt package. tada relieved

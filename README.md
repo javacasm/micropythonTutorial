@@ -55,6 +55,7 @@ Contestamos que queremos activar el acceso y establecemos una contraseña de acc
         sta_if.scan()                               # Escaneamos las redes disponibles
         sta_if.connect("<AP_name>", "<password>")   # Conectamos al AP
         sta_if.isconnected()                        # Comprobamos si estamos conectados
+        sta_if.ifconfig()                           # Vemos la ip ('192.168.1.137', '255.255.255.0', '192.168.1.1', '87.216.1.65')
 
 
 ## Controlando un pin 

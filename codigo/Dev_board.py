@@ -2,6 +2,7 @@
 
 # http://forum.hobbycomponents.com/viewtopic.php?f=110&t=2056
 # http://hobbycomponents.com/images/forum/HCDVBD0027_Features.png
+# https://blog.hobbycomponents.com/?p=594
 # RGB 12 (green), 13 (blue), and 15 (red)
 # Leds Ordered 2 0 4 5 14 16 (All inverted) 
 

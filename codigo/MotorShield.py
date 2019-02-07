@@ -1,6 +1,7 @@
 # Motor Shield
 # from https://forum.micropython.org/viewtopic.php?t=3977
-
+# Problemas de rendimiento https://www.instructables.com/id/Motorized-WiFi-IKEA-Roller-Blind/
+# https://www.instructables.com/id/Motorize-IoT-With-ESP8266/
 
 from machine import Pin, PWM
 
@@ -22,7 +23,7 @@ speed_max = 1023
 current_speed = speed_med 
 
 speedA = PWM(Pin(4,Pin.OUT), freq = pwm_frequency)
-dirA = Pin(2,Pin.OUT
+dirA = Pin(2,Pin.OUT)
 dirB = Pin(0,Pin.OUT)
 speedB = PWM(Pin(5,Pin.OUT), freq = 750)
 

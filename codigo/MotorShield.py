@@ -22,17 +22,17 @@ speed_max = 1023
 
 current_speed = speed_med 
 
-speedA = PWM(Pin(4,Pin.OUT), freq = pwm_frequency)
-dirA = Pin(2,Pin.OUT)
-dirB = Pin(0,Pin.OUT)
-speedB = PWM(Pin(5,Pin.OUT), freq = 750)
+speedB = PWM(Pin(4,Pin.OUT), freq = pwm_frequency)
+dirB = Pin(2,Pin.OUT)
+dirA = Pin(0,Pin.OUT)
+speedA = PWM(Pin(5,Pin.OUT), freq = 750)
 
 def stop():
     speedA.duty(speed_STOP)
     speedB.duty(speed_STOP)
-    
 
-def Backward():
+
+def backward():
     speedA.duty(current_speed)
     speedB.duty(current_speed)
     dirA.off()

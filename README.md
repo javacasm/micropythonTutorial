@@ -9,7 +9,7 @@
 1. Borramos la flash
 
         esptool.py  --port /dev/ttyUSB0 erase_flash
-        
+
 
 2. Descargamos el firmware (para el ESP8266)
 
@@ -18,15 +18,16 @@
 3. Copiamos el firmware
 
 
-    esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 Descargas/esp8266-512k-20190108-v1.9.4-773-gafecc124e.bin
+      esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 Descargas/esp8266-512k-20190108-v1.9.4-773-gafecc124e.bin
 
 
 
 4. Accedemos al prompt de micropython
 
         screen /dev/ttyUSB0 115200
-        
-ó         
+
+ó       
+
         picocom  /dev/ttyUSB0 -b115200
 
 
@@ -40,17 +41,17 @@
 
 Contestamos que queremos activar el acceso y establecemos una contraseña de acceso
 
-6. Conectamos a [http://micropython.org/webrepl/](http://micropython.org/webrepl/) para acceder al cliente 
+6. Conectamos a [http://micropython.org/webrepl/](http://micropython.org/webrepl/) para acceder al cliente
 
 7. Nos conectamos a una red wifi llamada MicroPython_xxxxxx (donde xxxxx es parte de la MAC de nuestro ESP) (vía 192.168.4.1:8266/)
 
 8. Pulsamos conectar en la consola de webrepl y nos pedirá la contraseña de acceso
- 
+
 9. Configuramos la conexión a una red wifi determinada (siguiendo las intrucciones de **help()** )¿se mantiene después de un reset?
 
 
         import network                              # Importamos el modulo network completo
-        sta_if = network.WLAN(network.STA_IF)       # Establecemos el modo punto de acceso (AP) 
+        sta_if = network.WLAN(network.STA_IF)       # Establecemos el modo punto de acceso (AP)
         sta_if.active(True)                         # Activamos el wifi
         sta_if.scan()                               # Escaneamos las redes disponibles
         sta_if.connect("<AP_name>", "<password>")   # Conectamos al AP
@@ -58,14 +59,14 @@ Contestamos que queremos activar el acceso y establecemos una contraseña de acc
         sta_if.ifconfig()                           # Vemos la ip ('192.168.1.137', '255.255.255.0', '192.168.1.1', '87.216.1.65')
 
 
-## Controlando un pin 
+## Controlando un pin
 
 Hay que empezar diciendo que la nomenclatura de los pines utiliza la especificación del fabricante (Normalmente GPIO)
 
 Para activar el led incluido en la placa ESP12 (conectado inversamente al GPIO2)
 
-        from machine import Pin     ## Importamos la clase 
-        p2 = Pin(2,Pin.OUT)         ## Usaremos el GPIO02 como salida 
+        from machine import Pin     ## Importamos la clase
+        p2 = Pin(2,Pin.OUT)         ## Usaremos el GPIO02 como salida
         p2.on()                     ## Activamos y se apagara el led
         p2.off()                    ##
 
@@ -87,7 +88,7 @@ There are two files that are treated specially by the ESP8266 when it starts up:
 
 
         import os
-        
+
         os.listdir()
 
         You can make directories:
@@ -105,13 +106,13 @@ You can use rshell, ampy, WEB_REPL, etc.
 
 ## Mo'dulos o librer'ias
 
-[Librer'ias](https://docs.micropython.org/en/latest/library/index.html)
+[Librerías](https://docs.micropython.org/en/latest/library/index.html)
 
-Podemos ver los m'odulos disponibles con 
+Podemos ver los m'odulos disponibles con
 
         help('modules')
-        
-Y podemos obtener ayuda de objeto    concreto con 
+
+Y podemos obtener ayuda de objeto    concreto con
 
         help(objeto)
 
@@ -119,7 +120,11 @@ Y podemos obtener ayuda de objeto    concreto con
 
 ### uPyCraft
 
-http://icircuit.net/nodemcu-getting-started-micropython/2406
+
+[Instalación](https://randomnerdtutorials.com/install-upycraft-ide-linux-ubuntu-instructions/)
+[Tutorial](https://randomnerdtutorials.com/getting-started-micropython-esp32-esp8266/)
+
+[Descargar uPyCraft](https://randomnerdtutorials.com/uPyCraftLinux)
 
 ## Wemos D1 mini
 
@@ -137,7 +142,7 @@ http://icircuit.net/nodemcu-getting-started-micropython/2406
 
 [Especificación del ESP8266](https://docs.micropython.org/en/latest/esp8266/general.html#technical-specifications-and-soc-datasheets)
 
-[Tutorial de micropython para ESP32](https://www.cnx-software.com/2017/10/16/esp32-micropython-tutorials/) 
+[Tutorial de micropython para ESP32](https://www.cnx-software.com/2017/10/16/esp32-micropython-tutorials/)
 
 [Tutorial de micropython para ESP8266 y ESP32](https://randomnerdtutorials.com/getting-started-micropython-esp32-esp8266/)
 
@@ -151,6 +156,3 @@ http://icircuit.net/nodemcu-getting-started-micropython/2406
 [Termometro](https://github.com/mcauser/MicroPython-ESP8266-DHT-Nokia-5110)
 
 [Conway Game of life](https://github.com/mcauser/MicroPython-ESP8266-Nokia-5110-Conways-Game-of-Life#configure-access-point)
-
-
-

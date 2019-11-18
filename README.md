@@ -1,8 +1,27 @@
 # Tutorial micropython
 
+
+José Antonio Vacas @javacasm
+
+![Licencia CC](./images/Licencia_CC.png)
+
 ## ¿Por qué usar micropython?
 
+Micropython es una versión reducida del lenguaje python, pensado para que pueda ser ejecutado en dispositivos con menor capacidad de almacenamiento y procesamiento, como por ejemplo micro:bit o los distintos ESP
+
+Al ser python un lenguaje interpretado lo que haremos será flasear el dispositivo con un firmware capaz de interpretarlo y al que podremos ir enviando los ficheros .py con el código python
+
 ## Empezando
+
+
+Para flashear nuestro ESP8266 necesitamos la herramienta esptool. Nos aseguramos de tener instalado **pip** para python 3 con (más información sobre le herramienta pip en [este enlace](https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/	))
+
+		sudo apt install python3-pip
+	
+y ahora instalamos la herramienta **esptool** para flashear nuestro dispositivo
+
+		pip3 install –upgrade esptool
+
 
 [Instalación del firmware micropython](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html)
 
@@ -11,18 +30,14 @@
         esptool.py  --port /dev/ttyUSB0 erase_flash
 
 
-2. Descargamos el firmware (para el ESP8266)
+2. Descargamos el firmware (para el ESP8266) de http://micropython.org/download#esp8266 teniendo en cuenta la memoria de nuestro dispositivo (512Kb en el ejemplo)
 
-    http://micropython.org/download#esp8266
+3. Conectamos nuestra placa por USB y la flasheamos la placa con el firmware
 
-3. Copiamos el firmware
-
-
-      esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 Descargas/esp8266-512k-20190108-v1.9.4-773-gafecc124e.bin
+      esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 Descargas/esp8266-512k-20191118-v1.11-580-g973f68780.bin
 
 
-
-4. Accedemos al prompt de micropython
+4. Accedemos al prompt de micropython para ver que todo ha ido bien
 
         screen /dev/ttyUSB0 115200
 
@@ -33,7 +48,7 @@
 
 ## [Web_REPL](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html)
 
-(Para ESP de al menos 1M (no disponible en los de 0.5M))
+Para ESP de al menos 1M (no disponible en los de 512Kb))
 
 5. Configuramos el acceso con Wep_REPL
 
@@ -104,15 +119,15 @@ There are two files that are treated specially by the ESP8266 when it starts up:
 
 You can use rshell, ampy, WEB_REPL, etc.
 
-## Mo'dulos o librer'ias
+## Módulos o librerías
 
 [Librerías](https://docs.micropython.org/en/latest/library/index.html)
 
-Podemos ver los m'odulos disponibles con
+Podemos ver los módulos disponibles con
 
         help('modules')
 
-Y podemos obtener ayuda de objeto    concreto con
+Y podemos obtener ayuda de objeto concreto con
 
         help(objeto)
 

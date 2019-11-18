@@ -1,5 +1,6 @@
 # Tutorial micropython
 
+Tutorial/cookbook de nivel inicial de micropython sobre todo para ESPs
 
 José Antonio Vacas @javacasm
 

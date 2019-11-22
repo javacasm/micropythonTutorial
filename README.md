@@ -35,7 +35,7 @@ y ahora instalamos la herramienta **esptool** para flashear nuestro dispositivo
 
 3. Conectamos nuestra placa por USB y la flasheamos la placa con el firmware
 
-      esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 ~/Descargas/esp8266-512k-20191118-v1.11-580-g973f68780.bin
+		esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 ~/Descargas/esp8266-512k-20191118-v1.11-580-g973f68780.bin
 
 
 4. Accedemos al prompt de micropython para ver que todo ha ido bien
@@ -60,7 +60,7 @@ Para ESP de al menos 1M (no disponible en los de 512Kb))
 
 5. Configuramos el acceso con Wep_REPL
 
-        import webrepl_setup
+		import webrepl_setup
 
 	Contestamos que queremos activar el acceso pulsando E y establecemos una contraseña de acceso. A partir de ahora quedará activado en cada arranque.
 
@@ -73,13 +73,13 @@ Para ESP de al menos 1M (no disponible en los de 512Kb))
 9. Configuramos la conexión a una red wifi determinada (siguiendo las intrucciones de **help()**  y ayudándonos de la tecla TAB para completar) Esta configuración se mantiene después de un reset. Al ser interactivo, cada línea tiene una salida indicando el resultado
 
 
-        import network                              # Importamos el modulo network completo
-        sta_if = network.WLAN(network.STA_IF)       # Establecemos el modo punto de acceso (AP)
-        sta_if.active(True)                         # Activamos el wifi
-        sta_if.scan()                               # Escaneamos las redes disponibles
-        sta_if.connect("<AP_name>", "<password>")   # Conectamos al AP
-        sta_if.isconnected()                        # Comprobamos si estamos conectados
-        sta_if.ifconfig()                           # Vemos la ip ('192.168.1.137', '255.255.255.0', '192.168.1.1', '87.216.1.65')
+		import network                              # Importamos el modulo network completo
+		sta_if = network.WLAN(network.STA_IF)       # Establecemos el modo punto de acceso (AP)
+		sta_if.active(True)                         # Activamos el wifi
+		sta_if.scan()                               # Escaneamos las redes disponibles
+		sta_if.connect("<AP_name>", "<password>")   # Conectamos al AP
+		sta_if.isconnected()                        # Comprobamos si estamos conectados
+		sta_if.ifconfig()                           # Vemos la ip ('192.168.1.137', '255.255.255.0', '192.168.1.1', '87.216.1.65')
 
 
 ## Controlando un pin

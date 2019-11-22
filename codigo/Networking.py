@@ -24,9 +24,10 @@ def do_connect():
     import network
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
+    ssid = 'miSSID'
     if not wlan.isconnected():
-        print('connecting to network...')
-        wlan.connect('essid', 'password')
+        print('connecting to network '+ ssid)
+        wlan.connect(ssid, 'password')
         while not wlan.isconnected():
-            pass
+            print('.')
     print('network config:', wlan.ifconfig())

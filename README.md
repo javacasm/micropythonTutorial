@@ -60,9 +60,11 @@ Para ESP de al menos 1M (no disponible en los de 512Kb))
 
 5. Configuramos el acceso con Wep_REPL
 
-		import webrepl_setup
+```python
+import webrepl_setup
+```
 
-	Contestamos que queremos activar el acceso pulsando E y establecemos una contraseña de acceso. A partir de ahora quedará activado en cada arranque.
+Contestamos que queremos activar el acceso pulsando E y establecemos una contraseña de acceso. A partir de ahora quedará activado en cada arranque.
 
 6. Conectamos a [http://micropython.org/webrepl/](http://micropython.org/webrepl/) para acceder al cliente
 
@@ -72,7 +74,7 @@ Para ESP de al menos 1M (no disponible en los de 512Kb))
 
 9. Configuramos la conexión a una red wifi determinada (siguiendo las intrucciones de **help()**  y ayudándonos de la tecla TAB para completar) Esta configuración se mantiene después de un reset. Al ser interactivo, cada línea tiene una salida indicando el resultado
 
-'''python
+```python
 import network                              # Importamos el modulo network completo
 sta_if = network.WLAN(network.STA_IF)       # Establecemos el modo punto de acceso (AP)
 sta_if.active(True)                         # Activamos el wifi
@@ -80,7 +82,7 @@ sta_if.scan()                               # Escaneamos las redes disponibles
 sta_if.connect("<AP_name>", "<password>")   # Conectamos al AP
 sta_if.isconnected()                        # Comprobamos si estamos conectados
 sta_if.ifconfig()                           # Vemos la ip ('192.168.1.137', '255.255.255.0', '192.168.1.1', '87.216.1.65')
-'''
+```
 
 
 ## Controlando un pin
@@ -89,19 +91,23 @@ Hay que empezar diciendo que la nomenclatura de los pines utiliza la especificac
 
 Para activar el led incluido en la placa ESP12 (conectado inversamente al GPIO2)
 
-        from machine import Pin     ## Importamos la clase
-        p2 = Pin(2,Pin.OUT)         ## Usaremos el GPIO02 como salida
-        p2.on()                     ## Activamos y se apagara el led
-        p2.off()                    ##
+```python
+from machine import Pin     ## Importamos la clase
+p2 = Pin(2,Pin.OUT)         ## Usaremos el GPIO02 como salida
+p2.on()                     ## Activamos y se apagara el led
+p2.off()                    ##
+```
 
 Vamos a usar ahora el [relé del shield de wemos](https://wiki.wemos.cc/products:d1_mini_shields:relay_shield)
 
 
 ![Rele shield](https://wiki.wemos.cc/_media/products:d1_mini_shields:relay_v2.0.0_1_16x9.jpg)
 
-        pReleWemos = Pin(5,Pin.OUT)
-        pReleWemos.on()
-        pReleWemos.off()  
+```python
+pReleWemos = Pin(5,Pin.OUT)
+pReleWemos.on()
+pReleWemos.off()  
+```
 
 
 ## Ficheros

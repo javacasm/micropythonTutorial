@@ -21,33 +21,40 @@ Para flashear nuestro ESP8266 necesitamos la herramienta esptool. Nos aseguramos
 	
 y ahora instalamos la herramienta **esptool** para flashear nuestro dispositivo
 
-		pip3 install –upgrade esptool
+		pip3 install esptool
 
 
-[Instalación del firmware micropython](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html)
+[Instalación del firmware micropython](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html) (Para los dispositivos esp8266 tenemos que arrancarlo con el pin GPIO00 conectado a GND)
 
 1. Borramos la flash
 
-        esptool.py  --port /dev/ttyUSB0 erase_flash
+		esptool.py  --port /dev/ttyUSB0 erase_flash
 
 
 2. Descargamos el firmware (para el ESP8266) de http://micropython.org/download#esp8266 teniendo en cuenta la memoria de nuestro dispositivo (512Kb en el ejemplo)
 
 3. Conectamos nuestra placa por USB y la flasheamos la placa con el firmware
 
-      esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 Descargas/esp8266-512k-20191118-v1.11-580-g973f68780.bin
+      esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 ~/Descargas/esp8266-512k-20191118-v1.11-580-g973f68780.bin
 
 
 4. Accedemos al prompt de micropython para ver que todo ha ido bien
 
-        screen /dev/ttyUSB0 115200
+		screen /dev/ttyUSB0 115200
+ó
 
-ó       
+		picocom  /dev/ttyUSB0 -b115200
 
-        picocom  /dev/ttyUSB0 -b115200
 
+Esta forma de conexión se denomina REPL ("Read-Eval-Print-Loop"): una shell de python que nos permite trabajar y probar nuestro código de manera interactiva
+
+Incluye algunas de utilidades a las que estamos acostumbrados en las shels, como recuperar los [comandos ya usados](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html#input-history) usando las teclas del curso arriba y abajo o el [completado de método y nombre con la tecla TAB](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html#tab-completion). Si queremos [pegar código](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html#paste-mode) podemos hacerlo pulsando antes Ctrl-E y [más opciones](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html#other-control-commands)
+
+Por defecto todo dispositivo micropython crea una red wifi llamada ESSID MicroPython-xxxxxx con ip 192.168.4.1 y contraseña **micropythoN** ([detalles](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html#wifi))
 
 ## [Web_REPL](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html)
+
+Web_REPL nos permite acceder a una shell REPL vía wifi
 
 Para ESP de al menos 1M (no disponible en los de 512Kb))
 
@@ -55,7 +62,7 @@ Para ESP de al menos 1M (no disponible en los de 512Kb))
 
         import webrepl_setup
 
-Contestamos que queremos activar el acceso y establecemos una contraseña de acceso
+	Contestamos que queremos activar el acceso pulsando E y establecemos una contraseña de acceso. A partir de ahora quedará activado en cada arranque.
 
 6. Conectamos a [http://micropython.org/webrepl/](http://micropython.org/webrepl/) para acceder al cliente
 
@@ -63,7 +70,7 @@ Contestamos que queremos activar el acceso y establecemos una contraseña de acc
 
 8. Pulsamos conectar en la consola de webrepl y nos pedirá la contraseña de acceso
 
-9. Configuramos la conexión a una red wifi determinada (siguiendo las intrucciones de **help()** )¿se mantiene después de un reset?
+9. Configuramos la conexión a una red wifi determinada (siguiendo las intrucciones de **help()**  y ayudándonos de la tecla TAB para completar) Esta configuración se mantiene después de un reset. Al ser interactivo, cada línea tiene una salida indicando el resultado
 
 
         import network                              # Importamos el modulo network completo
@@ -149,6 +156,14 @@ Y podemos obtener ayuda de objeto concreto con
 [Esquema](https://wiki.wemos.cc/_media/products:d1:sch_d1_mini_v3.0.0.pdf)
 
 ![Pinout wemos D1](https://www.esploradores.com/wp-content/uploads/2017/01/d1-mini-esp8266.jpg)
+
+## NodeMCU
+
+![Pinout NodeMCU](https://external-preview.redd.it/nUkII641DY7O3_gbcxq2W4RlYgRI1jBwaHHoJLf2kKE.png?width=960&crop=smart&auto=webp&s=879b177f118c0b0aa8fe21b1ffb96f581b3bc450)
+
+## ESP01 (ESP8266)
+
+![Pinout ESP8266](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP-01-ESP8266-pinout-gpio-pin.png?ssl=1)
 
 ## Recursos
 

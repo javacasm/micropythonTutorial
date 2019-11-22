@@ -116,17 +116,21 @@ Podemos ver el contenido del sistema de archivos con
 
 There are two files that are treated specially by the ESP8266 when it starts up: boot.py and main.py. The boot.py script is executed first (if it exists) and then once it completes the main.py script is executed. You can create these files yourself and populate them with the code that you want to run when the device starts up.
 
+```python
+import os
+os.listdir()
+```
 
-        import os
+Crear directorios:
 
-        os.listdir()
+```python
+os.mkdir('dir')
+```
+O borrar archivos
 
-        You can make directories:
-
-        >>> os.mkdir('dir')
-        And remove entries:
-
-        >>> os.remove('data.txt')
+```python
+os.remove('data.txt')
+```
 
 
 
@@ -156,6 +160,25 @@ Y podemos obtener ayuda de objeto concreto con
 
 [Descargar uPyCraft](https://randomnerdtutorials.com/uPyCraftLinux)
 
+# Placas
+
+
+## ESP12
+
+
+![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-ESP-12E-chip-pinout-gpio-pin.png?ssl=1)
+
+
+```python
+# Ejemplo parpadeo led incluido en la placa (que tiene el estado invertido)
+
+import machine                                                                                                                            
+led = machine.Pin(1,machine.Pin.OUT)                                                                                                      
+led.off()                                                                                                                                 
+led.on()   
+
+```
+
 ## Wemos D1 mini
 
 [Especificación Wemos D1](https://wiki.wemos.cc/products:d1:d1_mini)
@@ -164,13 +187,53 @@ Y podemos obtener ayuda de objeto concreto con
 
 ![Pinout wemos D1](https://www.esploradores.com/wp-content/uploads/2017/01/d1-mini-esp8266.jpg)
 
+
+```python
+# Ejemplo parpadeo led incluido en la placa (que tiene el estado invertido)
+
+import machine                                                                                                                            
+led = machine.Pin(1,machine.Pin.OUT)                                                                                                      
+led.off()                                                                                                                                 
+led.on()   
+
+```
+
 ## NodeMCU
 
 ![Pinout NodeMCU](https://external-preview.redd.it/nUkII641DY7O3_gbcxq2W4RlYgRI1jBwaHHoJLf2kKE.png?width=960&crop=smart&auto=webp&s=879b177f118c0b0aa8fe21b1ffb96f581b3bc450)
 
+
+```python
+# Ejemplo parpadeo led incluido en la placa (que tiene el estado invertido)
+
+import machine                                                                                                                            
+led = machine.Pin(1,machine.Pin.OUT)                                                                                                      
+led.off()                                                                                                                                 
+led.on()   
+
+```
+
 ## ESP01 (ESP8266)
 
 ![Pinout ESP8266](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP-01-ESP8266-pinout-gpio-pin.png?ssl=1)
+
+
+```python
+# Ejemplo parpadeo led incluido en la placa (que tiene el estado invertido)
+
+import machine                                                                                                                            
+led = machine.Pin(1,machine.Pin.OUT)                                                                                                      
+led.off()                                                                                                                                 
+led.on()   
+
+```
+
+## Otras placas
+
+
+[Colección de placas](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
+
+[Más detalles sobre las placas](https://www.aprendiendoarduino.com/tag/modemcu/)
 
 ## Recursos
 

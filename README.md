@@ -173,7 +173,7 @@ Y podemos obtener ayuda de objeto concreto con
 # Ejemplo parpadeo led incluido en la placa (que tiene el estado invertido)
 
 import machine                                                                                                                            
-led = machine.Pin(1,machine.Pin.OUT)                                                                                                      
+led = machine.Pin(2,machine.Pin.OUT)                                                                                                      
 led.off()                                                                                                                                 
 led.on()   
 
@@ -192,7 +192,7 @@ led.on()
 # Ejemplo parpadeo led incluido en la placa (que tiene el estado invertido)
 
 import machine                                                                                                                            
-led = machine.Pin(1,machine.Pin.OUT)                                                                                                      
+led = machine.Pin(2,machine.Pin.OUT)                                                                                                      
 led.off()                                                                                                                                 
 led.on()   
 
@@ -207,7 +207,7 @@ led.on()
 # Ejemplo parpadeo led incluido en la placa (que tiene el estado invertido)
 
 import machine                                                                                                                            
-led = machine.Pin(1,machine.Pin.OUT)                                                                                                      
+led = machine.Pin(2,machine.Pin.OUT)                                                                                                      
 led.off()                                                                                                                                 
 led.on()   
 

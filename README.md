@@ -185,6 +185,28 @@ led.on()
 
 [Esquema](https://wiki.wemos.cc/_media/products:d1:sch_d1_mini_v3.0.0.pdf)
 
+
+
+```python
+# Wemos-ESP12 Adapter
+# D3 = GPIO0  High = Run Low = Flash
+# D4 = GPIO2 Led BuiltIn ESP12
+# D0 = GPIO16 Wake	
+# A0 = ADC
+TX = 1
+RX = 3
+D1 = 5
+D2 = 4
+D3 = 0
+D4 = 2
+D0 = 16
+D5 = 14
+D6 = 12
+D7 = 13
+D8 = 15
+BUILITIN_LED = 2
+```
+
 ![Pinout wemos D1](https://www.esploradores.com/wp-content/uploads/2017/01/d1-mini-esp8266.jpg)
 
 
@@ -197,6 +219,8 @@ led.off()
 led.on()   
 
 ```
+
+
 
 ## NodeMCU
 

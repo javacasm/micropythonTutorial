@@ -1,20 +1,25 @@
 # Meteo Salon
 
-# SDA       D4 (GPIO02)
-# SCL       D3 (GPIO00)
+# SDA       D3 (GPIO00)
+# SCL       D4 (GPIO02)
 # LED RGB   D2 (GPIO04)
 
-import neopixel,machine,NeoPixelTHO,time,Wemos
+import neopixel, machine, NeoPixelTHO, time, Wemos, BME280
 
-
+# LedRGBN
 ledRGB = neopixel.NeoPixel(machine.Pin(Wemos.D2),1) # Led RGB through the Hole en pin D4 (GPIO4)
+
+# Builtin Led
 led = machine.Pin(Wemos.BUILTIN_LED,machine.Pin.OUT)
 led.on()  # It's inverted
 
+# BME280 via I2C 
+i2c = machine.I2C(sda = machine.Pin(Wemos.D3),scl = machine.Pin(Wemos.D4))
+bme = BME280.BME280(i2c = i2c, address = 118)
+
+
 def testColor():
-    for color in NeoPixelTHO.ciclo:
-        ledRGB[0] = color
-        ledRGB.write()
+    NeoPixelTHO.test()
 
 ## Encendemos todo
 def encendemosTodo():
@@ -36,6 +41,7 @@ def start():
 def color(c):
     ledRGB[0]=c
     ledRGB.write()
+
 
 
 

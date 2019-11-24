@@ -10,7 +10,7 @@ def testBME280():
     print('Temp: '+str(bme.temperature) + ' Pres: '+ str(bme.pressure) + ' Hum: '+str(bme.humidity)
 
 
-def testBME280_Wireless():
+def testBME280Wireless():
     i2c = machine.I2C(sda=machine.Pin(Wemos.D3),scl=machine.Pin(Wemos.D4))
     i2c.scan() # [118]
     bme = BME280.BME280(i2c = i2c,address = 118)

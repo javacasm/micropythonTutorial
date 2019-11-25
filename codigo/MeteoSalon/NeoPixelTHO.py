@@ -1,57 +1,43 @@
 import machine,neopixel
 
 # Led compatible neopixel https://a.pololu-files.com/picture/0J5433.631.jpg 
-
-blue = (0,0,150)
-tinyBlue = (0,0,10)
-green = (150,0,0) 
-tinyGreen = (10,0,0)
-red = (0,150,0)
-tinyRed = (0,10,0)
-yellow = (120,100,0)
-orange = (100,120,0)
-black = (0,0,0)
-white = (255,255,255)
-gray = (10,10,10)
-pink = (0,70,30)
-purple = (0,30,70)
-
+# Using GRB format
 def colorByName(msg):
-    col = black
+    col = (0,0,0)
     if msg == b'Red':
-        col = red
+        col = (0,150,0)
     elif msg == b'Black':
-        col = black
+        col = (0,0,0)
     elif msg == b'Blue':
-        col = blue
-    elif msg == b'TinyBlue':
-        col = tinyBlue
+        col = (0,0,150)
     elif msg == b'Green':
-        col = green
+        col = (150,0,0)
     elif msg == b'White':
-        col = white
+        col = (255,255,255)
+    elif msg == b'TinyBlue':
+        col = (0,0,10)        
     elif msg == b'Yellow':
-        col = yellow
+        col = (244,252,3)
     elif msg == b'Orange':
-        col = orange
+        col = (140,252,3)
     elif msg == b'Gray':
-        col = gray
+        col = (10,10,10)
     elif msg == b'TinyGreen':
-        col = tinyGreen
+        col = (10,0,0)
     elif msg == b'TinyRed':
-        col = tinyRed
+        col = (0,10,0)
     elif msg == b'Pink':
-        col = pink
+        col = (0,70,30)
     elif msg == b'Purple':
-        col = purple
+        col = (0,30,70)
     return col
 
 def test(pin = 2):
     import time
     np = neopixel.NeoPixel(machine.Pin(pin),1) # Led RGB through the Hole en pin D4 (GPIO2) by default
-    ciclo = {blue, green, red, white, black}
+    ciclo = {b'Blue', b'Green', b'Red', b'White', b'Black'}
     for color in ciclo:
-        np[0] = color
+        np[0] = colorByName(color)
         np.write()
         time.sleep(0.5)
 

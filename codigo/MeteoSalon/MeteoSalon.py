@@ -28,8 +28,8 @@ def encendemosTodo():
 ## Apagamos todo
 def apagamosTodo():
     led.on()
-    ledRGB[0]=NeoPixelTHO.black
-    ledRGB.write()
+    color(b'Black')
+
 
 def start():
     encendemosTodo()
@@ -37,6 +37,6 @@ def start():
     apagamosTodo()
 
 def color(c):
-    ledRGB[0]=c
+    ledRGB[0]=NeoPixelTHO.colorByName(c)
     ledRGB.write()
 

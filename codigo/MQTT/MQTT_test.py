@@ -9,6 +9,7 @@ import MeteoSalon   # Relacionado con los dispositivos conectados
 import NeoPixelTHO  # Relacioniado con el ledRGB
 import time         # Para las esperas
 import helpFiles    # para free y df
+import utime
 
 client_id = ubinascii.hexlify(machine.unique_id())
 
@@ -35,7 +36,7 @@ def sub_CheckTopics(topic, msg):
             print('Led:Off')
             MeteoSalon.led.on()
     elif topic == topic_subLedRGB:      ## Check for RGB Topic
-        MeteoSalon.color(NeoPixelTHO.colorByName(msg))
+        MeteoSalon.color(msg)
     elif topic == topic_subFree:        ## Check for free memory
         freeMem = helpFiles.free()
         client.publish(topic_subMem, str(freeMem))
@@ -56,11 +57,16 @@ def restart_and_reconnect():
   time.sleep(10)
   machine.reset()
 
-def mainBeta():
+def mainBeta(everySeconds=60):
     connect_and_subscribe() # connect and get a client reference
-    while(True):
+    last_Temp = utime.ticks_ms()
+    while True :
         client.check_msg() # Check por new messages and call the callBack function
-        client.publish(topic_subTemp, MeteoSalon.bme.temperature)
-        client.publish(topic_subPress, MeteoSalon.bme.pressure)
-        client.publish(topic_subHum, MeteoSalon.bme.humidity)
+        now = utime.ticks_ms()
+        if utime.ticks_diff(now, last_Temp) > (everySeconds*1000):
+            last_Temp = now
+            client.publish(topic_subTemp, MeteoSalon.bme.temperature)
+            client.publish(topic_subPress, MeteoSalon.bme.pressure)
+            client.publish(topic_subHum, MeteoSalon.bme.humidity)
         time.sleep_ms(200)
+

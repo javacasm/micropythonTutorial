@@ -198,3 +198,8 @@ r = urequests.get("http://api.openweathermap.org/data/2.5/weather?q=Zurich&appid
 print(r["weather"][0]["description"])
 print(r["main"]["temp"] - 273.15)
 It’s also possible to make more advanced requests, adding special hea
+
+
+# Referencia
+
+[Tutorial](https://micropython-on-wemos-d1-mini.readthedocs.io/en/latest/shields.html#oled)

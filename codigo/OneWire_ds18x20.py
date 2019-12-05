@@ -1,5 +1,7 @@
 # https://docs.micropython.org/en/latest/esp8266/quickref.html#deep-sleep-mode
 
+# Wemos ds18x20 shield uses D2
+
 # You must also power the sensors and connect a 4.7k Ohm resistor between the data pin and the power pin.    
 import time
 import machine

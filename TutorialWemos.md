@@ -119,11 +119,9 @@ i2c.scan() # [119] o 0x77
 bmp = bmp180.BMP180(i2c)
 
 bmp.temperature
-
 bmp.pressure
 
 bmp.baseline = 101234## Presion a nivel del mar
-
 bmp.altitude
 
 ```
@@ -141,11 +139,23 @@ ds.read_temp(roms[0]) # 30.625
 ```
 
 
+# Pantalla OLED 
+
+# subimos el fichero [ssd1306.py](https://github.com/micropython/micropython/blob/master/drivers/display/ssd1306.py)
+
 
 ```python
 import ssd1306
 import machine
 import Wemos
+
+i2c = machine.I2C(sda = machine.Pin(Wemos.D2), scl = machine.Pin(Wemos.D1))
+display = ssd1306.SSD1306_I2C(64, 48, i2c)
+display.fill(0)
+display.text("Hello", 0, 0)
+display.text("world!", 0, 8)
+display.pixel(20, 20, 1)
+display.show()
 
 ```
 

@@ -1,8 +1,6 @@
-import time
-import tm1640
-import Wemos
 
-# Numeros del 0 al 9 de 4x6
+# Numbers 0 al 9 de 4x6
+
 digits_4x6 = [
 0x3c42423c00000000,
 0x00447e4000000000,
@@ -16,14 +14,22 @@ digits_4x6 = [
 0x0c52523c00000000,
 ]
 
-tm = tm1640.TM1640(clk = machine.Pin(Wemos.D5), dio = machine.Pin(D7))
-
-def count():
+def createTM1640()
+    import machine
+    import tm1640
+    import Wemos
+    tm = tm1640.TM1640(clk = machine.Pin(Wemos.D5), dio = machine.Pin(Wemos.D7))
+    return tm
+    
+def count(tm ):
+    import time
+    import tm1640
     for i in range(10):
         tm.write_int(digits_4x6[i])
         time.sleep(1)
 
-def show2FiguresNumber(numero):
+def show2FiguresNumber(tm, numero):
+    import tm1640
     numero = int(numero)
     units = numero % 10
     tens = numero // 10

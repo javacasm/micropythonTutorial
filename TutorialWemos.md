@@ -91,12 +91,27 @@ Ya que tenemos acceso a internet vía Wifi, vamos a usar el protocolo ntp para a
 
 [Ejemplo para tener en cuenta timezone](https://forum.micropython.org/viewtopic.php?t=5145)
 
+### Usando fechas
+
+>>> import utime
+>>> utime.time() # Epocs time: Segundos desde 1,1,1970 (GMT)
+>>> utime.localtime(utime.time()) # tupla con formato (year,month,day,hour,minute,seconds,day of week, day of year)
+>>> utime.localtime(utime.time()+3600) # Sumamos la hora para tiempo localtime
+
+## Formatos de impresion
+
+https://www.geeksforgeeks.org/python-output-formatting/
+
+"{0}/{1:02}/{2:02} {3:02}:{4:02}:{5:02}".format(*utime.localtime(utime.time()+3600)[0:6])
+
+
 ## Acceso a los pines
 
 Para facilitar el uso de los pines usaremos el módulo [Wemos.py](https://github.com/javacasm/micropythonTutorial/blob/master/codigo/Wemos.py) que nos permite usar los nombre de los pines que usa Wemos en lugar de los GPIO del ESP12 que utiliza micropython
 
 
 TODO: explicación de ficheros main.py y boot.py
+TODO: Donde se guarda el prompt
 TODO: C´omo subir un fichero
 
 ### Usando el Led builtIn
@@ -202,7 +217,7 @@ Senso DHT11 conectado al pin D4
 import dht,machine
 import Wemos
 
-dht11 = dht.DHT11(machine.Pin.D4)
+dht11 = dht.DHT11(machine.Pin(Wemos.D4))
 
 dht11.measure()
 dht11.temperature()

@@ -1,7 +1,7 @@
 import machine
 import BME280
 
-# v1.3
+# v1.4
 
 def initSensor():
     i2c = machine.I2C(sda = machine.Pin(5),scl = machine.Pin(4))

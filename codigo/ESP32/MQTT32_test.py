@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-# v1.3
+# v1.4
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -75,17 +75,17 @@ def restart_and_reconnect():
 def mainBeta(everySeconds=60):
     print(MyDateTime.setRTC())
     connect_and_subscribe() # connect and get a client reference
-    last_Temp = utime.ticks_ms()
+    last_Temp = 0 # utime.ticks_ms()
     bme = meteoExt.initSensor()
     while True :
         client.check_msg() # Check por new messages and call the callBack function
         now = utime.ticks_ms()
         if utime.ticks_diff(now, last_Temp) > (everySeconds*1000):
-            last_Temp = now
             client.publish(topic_subTime,MyDateTime.getLocalTimeHumanFormat())
             if bme != None:
                 client.publish(topic_subTemp, bme.temperature)
                 client.publish(topic_subPress, bme.pressure)
                 client.publish(topic_subHum, bme.humidity)
-        time.sleep_ms(200)
+            last_Temp = now                
+        time.sleep_ms(100) # Podriamos quitarlo
 

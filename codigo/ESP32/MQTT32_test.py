@@ -1,6 +1,8 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
+# v1.3
+
 from umqttsimple import MQTTClient
 import ubinascii
 import machine
@@ -81,8 +83,9 @@ def mainBeta(everySeconds=60):
         if utime.ticks_diff(now, last_Temp) > (everySeconds*1000):
             last_Temp = now
             client.publish(topic_subTime,MyDateTime.getLocalTimeHumanFormat())
-            client.publish(topic_subTemp, bme.temperature)
-            client.publish(topic_subPress, bme.pressure)
-            client.publish(topic_subHum, bme.humidity)
+            if bme != None:
+                client.publish(topic_subTemp, bme.temperature)
+                client.publish(topic_subPress, bme.pressure)
+                client.publish(topic_subHum, bme.humidity)
         time.sleep_ms(200)
 

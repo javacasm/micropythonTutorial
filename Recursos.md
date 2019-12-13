@@ -9,7 +9,7 @@ import port_diag
 import esp
 hex(esp.flash_id())
 
-esp.flash_size()  # flash size
+esp.flash_size()  # flash size(
        
       
       
@@ -20,3 +20,9 @@ https://forum.micropython.org/viewtopic.php?t=1777
 
 https://www.youtube.com/watch?v=5W3WvXAmDJc&feature=youtu.be
 https://www.youtube.com/watch?v=DFp_T-H3eRc&feature=youtu.be
+
+## Otros
+
+[Radio nRG24L01](https://github.com/mcauser/micropython-radio)
+
+[Nunchacu](https://github.com/mcauser/micropython-nunchuck)

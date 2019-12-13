@@ -391,6 +391,32 @@ tm.write_int(digits[5])
 
 ```
 
+## Led matrix driver Max7219
+
+### Conexión
+
+Wemos D1 Mini    | max7219 8x8 LED Matrix
+---------------- | ----------------------
+5V               | VCC
+GND              | GND
+D7 MOSI (GPIO13) | DIN
+D8 CS (GPIO15)   | CS
+D5 SCK (GPIO14)  | CLK
+
+
+Hay que bajar la velocidad de transferencia a 10Mhz desde los 80Mhz originales
+
+```python
+import max7219
+from machine import Pin, SPI
+spi = SPI(1, baudrate=10000000, polarity=0, phase=0)
+display = max7219.Matrix8x8(spi, Pin(15), 4)
+display.brightness(0)
+display.fill(0)
+display.text('1234',0,0,1)
+display.show()
+```
+
 ## TODO: Sobre machine
 ## TODO: Sobre esp
 
@@ -450,3 +476,5 @@ It’s also possible to make more advanced requests, adding special hea
 [Guía rápida micropython en el ESP8266](http://docs.micropython.org/en/latest/esp8266/quickref.html)
 
 [Tutorial](https://micropython-on-wemos-d1-mini.readthedocs.io/en/latest/shields.html#oled)
+
+[Ejemplos para arduino de los shields](https://github.com/wemos/D1_mini_Examples)

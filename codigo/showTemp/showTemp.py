@@ -7,7 +7,7 @@ import Wemos
 import number_helper
 import MyDateTime
 
-# V1.2
+# V1.4.1
 
 # BMP180
 def showTempBMP(tm):
@@ -38,16 +38,27 @@ def showTempDS(tm):
         number_helper.show2FiguresNumberX3(tm, tempDS)
         return tempDS
 
-# main
-def mainBeta():
+# init LedMatrix
+def initLedMatrix():
     tm = number_helper.createTM1640()
     tm.brightness(0)
+    return tm
+    
+# get sensors data 
+def getSensorsData(tm):
+    tempDS = showTempDS(tm)
+    tempDHT = showTempDHT(tm)
+    tempBMP = showTempBMP(tm)
+    msg = MyDateTime.getLocalTimeHumanFormat() + ', '+str(tempBMP)+ ', '+str(tempDHT)+ ', '+str(tempDS)
+    return msg
+
+# main
+def mainBeta():
+    tm = initLedMatrix()
     print(MyDateTime.setRTC())
     print("# DateTime,BMP,DHT,DS")
     while True:
-        tempDS = showTempDS(tm)
-        tempDHT = showTempDHT(tm)
-        tempBMP = showTempBMP(tm)
-        print(MyDateTime.getLocalTimeHumanFormat() + ', '+str(tempBMP)+ ', '+str(tempDHT)+ ', '+str(tempDS))
+        msg = getSensorsData(tm)
+        print(msg)
         time.sleep(1000)
 

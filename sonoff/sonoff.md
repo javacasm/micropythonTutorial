@@ -8,6 +8,8 @@
 
 ![](./images/sonoff_basic_pinout.jpg)
 
+![](./images/sonoff_basic_pinout.jpg)
+
 TODO: ¿qué es sonoff?
 
 [Flashing micropython](https://medium.com/cloud4rpi/getting-micropython-on-a-sonoff-smart-switch-1df6c071720a)
@@ -24,7 +26,7 @@ Para ello usa un HLW8012 ([Enlace](https://tinkerman.cat/post/hlw8012-ic-new-son
 
 [Pagina del producto](https://www.itead.cc/wiki/Sonoff_Pow)
 
-[Esquem'atico](https://www.itead.cc/wiki/images/5/52/Sonoff_POW_Schematic.pdf)
+[Esquemático](https://www.itead.cc/wiki/images/5/52/Sonoff_POW_Schematic.pdf)
 
 [User guide](http://ewelink.coolkit.cc/?p=188)
 

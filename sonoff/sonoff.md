@@ -31,3 +31,7 @@ Para ello usa un HLW8012 ([Enlace](https://tinkerman.cat/post/hlw8012-ic-new-son
 ## Control de un sonoff vía MQTT
 
 [codigo](https://github.com/kfricke/micropython-sonoff-switch) Además usa thread para ejecutar varias tareas
+
+## Nodo a partir de Sonoff basic
+
+Neopixel conectado al pin del LED

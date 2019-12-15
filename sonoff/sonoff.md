@@ -34,4 +34,17 @@ Para ello usa un HLW8012 ([Enlace](https://tinkerman.cat/post/hlw8012-ic-new-son
 
 ## Nodo a partir de Sonoff basic
 
-Neopixel conectado al pin del LED
+* Neopixel conectado al pin del LED (GPIO13)
+* Rele en GPIO12
+* DHT22 en GPIO14
+* ¿I2C en TX/RX? Segun [el enlace](https://github.com/arendst/Tasmota/issues/1865)
+
+```
+BME280-3.3V -> Sonoff-3.3V
+BME280-GND -> Sonoff-GND
+BME280-SCL -> Sonoff-TX
+BME280-SDA -> Sonoff-RX
+
+GPIO1 Serial Out -> I2C SCL
+GPIO3 Serial In -> I2C SDA
+```

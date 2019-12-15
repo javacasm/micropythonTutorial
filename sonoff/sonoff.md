@@ -6,9 +6,7 @@
 
 ### Sonoff basic
 
-![](./images/sonoff_basic_pinout.jpg)
-
-![](./images/sonoff_basic_pinout.jpg)
+![](../images/sonoff_basic_pinout.jpg)
 
 TODO: ¿qué es sonoff?
 

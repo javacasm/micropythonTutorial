@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-# v1.4.3
+# v1.4.4
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -21,12 +21,12 @@ topic_sub = b'MeteoSalon'
 topic_subFree = topic_sub + b'/free'
 topic_subMem = topic_sub + b'/mem'
 topic_subLed = topic_sub + b'/led'
-topic_subTime = topic_sub + b'/TimeExt'
+topic_subTime = topic_sub + b'/Time'
 topic_subTemp = topic_sub + b'/Temp'
 topic_subHum = topic_sub + b'/Hum'
 topic_subPress = topic_sub + b'/Press'
 topic_subLedRGB = topic_sub + b'/ledRGB'
-topic_subData = topic_sub + b'/SensorDataDSP'
+topic_subData = topic_sub + b'/SensorData'
 topic_pub = b'hello'
 
 mqtt_server = '192.168.1.200'

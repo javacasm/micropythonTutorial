@@ -4,7 +4,7 @@ import utime
 
 # DateTime utility
 
-# V1.2
+# v1.3.1
 
 def setRTC():
     ntptime.settime()

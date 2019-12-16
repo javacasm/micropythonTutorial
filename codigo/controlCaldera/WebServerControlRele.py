@@ -3,6 +3,8 @@
 # https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
 # https://forum.micropython.org/viewtopic.php?t=1940
 
+# v1.3.2
+
 try:
     import usocket as socket
 except:
@@ -10,9 +12,12 @@ except:
 
 import gc
 
-import machine, caldera_test, network
+import machine, network
 
+import myDateTime
 import helpFiles
+import Wemos
+import caldera_test
 import Wemos
 
 
@@ -29,6 +34,7 @@ def web_page():
     border-radius: 4px; color: white; padding: 16px 40px; text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}
     .button2{background-color: #4286f4;}</style></head><body> <h1>ESP Web Server</h1> 
     <p>Calefaccion: <strong>""" + gpio_state + """</strong></p><p><a href="/?rele=on"><button class="button">ON</button></a></p>
+    <p>"""+ myDateTime.getLocalTimeHumanFormat() +"""</p>
     <p><a href="/?rele=off"><button class="button button2">OFF</button></a></p></body></html>"""
     return html
 
@@ -43,11 +49,11 @@ def runServer():
         print('Esperando conexiones')
         conn, addr = s.accept()
         try:
-            print('Conexion desde %s' % str(addr))
+            print(myDateTime.getLocalTimeHumanFormat() +' Conexion desde %s' % str(addr))
             conn.settimeout(5)
             request = conn.recv(1024)
             request = str(request)
-            print('Contenido = %s' % request)
+            # print('Contenido = %s' % request)
             rele_on = request.find('/?rele=on')
             rele_off = request.find('/?rele=off')
             if rele_on == 6:

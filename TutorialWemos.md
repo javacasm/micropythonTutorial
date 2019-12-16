@@ -422,15 +422,7 @@ display.show()
 
 ## Usando baterías
 
-### Gestionando las baterías
-
-Har'ia este https://diyprojects.io/test-shield-battery-lipo-wemos-d1-mini-voltage-measurement-level-charge/#.Xe_c7B-E6Hs
-
-Ejemplo sencillo https://arduinodiy.wordpress.com/2016/12/25/monitoring-lipo-battery-voltage-with-wemos-d1-minibattery-shield-and-thingspeak/ 
-
-muy cientifico https://ezcontents.org/esp8266-battery-level-meter
-
-Sobre esp32 https://forum.arduino.cc/index.php?topic=595924.0 
+### [Gestionando las baterías](./Baterias.md)
 
 ## Uso de Ficheros
 

@@ -13,10 +13,11 @@ import gc
 import machine, caldera_test, network
 
 import helpFiles
+import Wemos
 
 
 def web_page():
-    releLocal = machine.Pin(5,machine.Pin.OUT)  # Rele shield en D1 (GPIO5)
+    releLocal = machine.Pin(Wemos.D1,machine.Pin.OUT)  # Rele shield en D1 (GPIO5)
     if releLocal.value() == 1:
       gpio_state="ON"
     else:

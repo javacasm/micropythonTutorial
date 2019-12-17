@@ -1,7 +1,5 @@
 # Sonoff
 
-![sonoff](https://miro.medium.com/max/3264/1*6wqaXGLsAK2RfuFTe7EcdQ.jpeg)
-
 ## Pinout
 
 ### Sonoff basic
@@ -45,7 +43,20 @@ BME280-GND -> Sonoff-GND
 BME280-SCL -> Sonoff-TX
 BME280-SDA -> Sonoff-RX
 
-GPIO1 Serial Out -> I2C SCL
-GPIO3 Serial In -> I2C SDA
+GPIO1 Serial Out (TX)-> I2C SCL
+GPIO3 Serial In (RX)-> I2C SDA
 ```
 
+## micropython en sonoff
+
+```
+esptool.py --port /dev/ttyACM0  write_flash -fs 1MB -fm dout 0x0 firmware.bin
+```
+
+## Controlando sonoff con MQTT
+
+[Controlando sonoff con MQTT](https://github.com/kfricke/micropython-sonoff-switch)
+ 
+## Referencia
+
+[Sonoff y mqtt](https://ricveal.com/blog/sonoff-mqtt/)

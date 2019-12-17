@@ -176,6 +176,21 @@ pwm.freq(24)
 pwm.duty(512) # 50%
 ```
 
+### Servos
+
+Una aplicación del PWM es el control de los conocidos servos (o servomotores)
+
+```python
+
+import machine
+
+servo = machine.PWM(machine.Pin(25),freq = 50)
+servo.duty(45) # Posicion minima
+servo.duty(77) # Posicion central
+servo.duty(115) # Posicion maxima
+
+```
+
 ### TODO: analógicos en A0
 
 ```python
@@ -387,9 +402,9 @@ digits = [
 ]
 tm.write_int(digits[0])
 tm.write_int(digits[5])
-
-
 ```
+
+[Ejemplo de uso de tm1640](https://github.com/mcauser/micropython-tm1640/blob/master/tm1640_test.py)
 
 ## Led matrix driver Max7219
 
@@ -467,6 +482,10 @@ It’s also possible to make more advanced requests, adding special hea
 
 [Guía rápida micropython en el ESP8266](http://docs.micropython.org/en/latest/esp8266/quickref.html)
 
-[Tutorial](https://micropython-on-wemos-d1-mini.readthedocs.io/en/latest/shields.html#oled)
+[workshop micropython en esp8266](https://micropython-on-esp8266-workshop.readthedocs.io/en/latest/basics.html)
+
+[Tutorial  de micropython para ESP8266](https://docs.micropython.org/en/latest/esp8266/tutorial/index.html#esp8266-tutorial)
+
+[Tutorial](https://micropython-on-wemos-d1-mini.readthedocs.io/en/latest/shields.html)
 
 [Ejemplos para arduino de los shields](https://github.com/wemos/D1_mini_Examples)

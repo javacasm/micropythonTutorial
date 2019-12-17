@@ -45,6 +45,21 @@ Podemos suscribirnos a un tema/topic con el comando
 mosquitto_sub -h servidorMQTT -t Tema
 ``` 
 
+
+### Ejemplo de arquitectura de topics
+
+
+    state_topic: "stat/sonoff/1/POWER"
+    command_topic: "cmnd/sonoff/1/POWER"
+    availability_topic: "tele/sonoff/1/LWT"
+
+Telemetria para que cuenten sus cosas ¿Por ejemplo los sensores?
+Command para peticiones ¿request?
+Stat para confirmaciones de estados
+
+
+[tomado de aqui](https://ricveal.com/blog/sonoff-mqtt/)
+
 ## Recursos
 
 https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266

@@ -22,3 +22,9 @@ RX
 ### Led RGB neopixel (GPIO2)
 
 [Esquemático](https://github.com/IOT-MCU/ESP-01S-RGB-LED-v1.0/blob/master/ESP-01S%20RGB%20LED%20v1.0.zip)
+
+## Referencia
+
+[workshop micropython en esp8266](https://micropython-on-esp8266-workshop.readthedocs.io/en/latest/basics.html)
+
+[Tutorial  de micropython para ESP8266](https://docs.micropython.org/en/latest/esp8266/tutorial/index.html#esp8266-tutorial)

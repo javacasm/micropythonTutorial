@@ -261,7 +261,9 @@ led.on()
 
 ## Recursos
 
-[Multitud de librer'ias](https://github.com/micropython/micropython-lib)
+[Awesome Micropython](https://awesome-micropython.com/)
+
+[Multitud de librerías](https://github.com/micropython/micropython-lib)
 
 [Arranque del ESP8266](https://docs.micropython.org/en/latest/esp8266/general.html#boot-process)
 

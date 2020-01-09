@@ -30,8 +30,12 @@ def apagaCaldera():
 
 
 def checkCaldera():
+    msg = 'Unknown'
     if rele.value()==1:
         np[0] = red
+        msg = 'On'
     else:
         np[0] = blue
+        msg = 'Off'
     np.write()
+    return msg

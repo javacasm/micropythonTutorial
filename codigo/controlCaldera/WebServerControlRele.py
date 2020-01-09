@@ -57,11 +57,10 @@ def runServer():
             rele_on = request.find('/?rele=on')
             rele_off = request.find('/?rele=off')
             if rele_on == 6:
-                print('CALDERA ON')
                 caldera_test.enciendeCaldera()
             if rele_off == 6:
-                print('CALDERA OFF')
                 caldera_test.apagaCaldera()
+            print('Caldera ',caldera_test.checkCaldera())
             response = web_page()
             conn.send('HTTP/1.1 200 OK\n')
             conn.send('Content-Type: text/html\n')
@@ -71,4 +70,4 @@ def runServer():
             print('Close socket')
         except :
             print('Timeout!!')
-        print(helpFiles.free())ww
+        print(helpFiles.free())

@@ -23,7 +23,7 @@ topic_subPress = topic_sub + b'/Press'
 topic_subLedRGB = topic_sub + b'/ledRGB'
 topic_pub = b'hello'
 
-mqtt_server = '192.168.1.200'
+mqtt_server = '192.168.1.100'
 
 
 def sub_CheckTopics(topic, msg):
@@ -49,7 +49,7 @@ def connect_and_subscribe():
   client.subscribe(topic_subFree)
   client.subscribe(topic_subLed)
   client.subscribe(topic_subLedRGB)
-  print('Connected to %s MQTT broker, subscribed to %s topic' % (mqtt_server, topic_subFree))
+  print('Connected to %s MQTT broker, subscribed to %s topic' % (mqtt_server, topic_subLedRGB))
   return client
 
 def restart_and_reconnect():

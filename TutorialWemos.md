@@ -423,9 +423,10 @@ Hay que bajar la velocidad de transferencia a 10Mhz desde los 80Mhz originales
 
 ```python
 import max7219
+import Wemos
 from machine import Pin, SPI
 spi = SPI(1, baudrate=10000000, polarity=0, phase=0)
-display = max7219.Matrix8x8(spi, Pin(15), 4)
+display = max7219.Matrix8x8(spi, Pin(Wemos.D8), 1)
 display.brightness(0)
 display.fill(0)
 display.text('1234',0,0,1)

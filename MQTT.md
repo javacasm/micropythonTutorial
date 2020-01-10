@@ -26,7 +26,11 @@ sudo systemctl enable mosquitto.service
 
 
 
-TODO: ¿Cómo podemos ver los logs cuando funciona como servicio?
+Para depurar el funcionamiento de mosquitto y ver los logs cuando funciona como servicio podemos usar
+
+https://community.home-assistant.io/t/how-to-debug-mosquitto-mqtt/107709/20
+http://www.steves-internet-guide.com/mosquitto-logging/
+https://github.com/thomasnordquist/MQTT-Explorer
 
 Para publicar y recibir mensajes necesitaremos las herramientas cliente, que podemos instalar con
 

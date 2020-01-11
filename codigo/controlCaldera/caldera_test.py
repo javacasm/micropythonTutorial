@@ -1,7 +1,7 @@
 import machine,neopixel
 import Wemos
 
-# v1.3.2
+# v1.4
 
 # Using a wemos https://escapequotes.net/wp-content/uploads/2016/02/esp8266-wemos-d1-mini-pinout.png
 

@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.3.7'
+v = '1.3.9'
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -81,10 +81,12 @@ def showSetCalderaStatus():
     if state == 'On':
         print('Caldera:On')
         publicaMQTT(topic_subLedRGB, "Red")
-        time.sleep_ms(50)
+        time.sleep_ms(100)
         publicaMQTT(topic_subLedRGB, "Black")
     else:
         print('Caldera:Off')
+        publicaMQTT(topic_subLedRGB, "Blue")
+        time.sleep_ms(100)
         publicaMQTT(topic_subLedRGB, "Black")
     publicaMQTT(topic_subCalderaStatus, state)
 

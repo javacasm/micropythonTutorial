@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.2.3'
+v = '1.3.7'
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -38,6 +38,8 @@ def sub_CheckTopics(topic, msg):
         elif topic == topic_subFree:        ## Check for free memory
             freeMem = helpFiles.free()
             publicaMQTT(topic_subMem, str(freeMem))
+    except KeyboardInterrupt:
+        pass
     except Exception as e:
         myLog('Error checking topics>' + str(e))
 
@@ -51,13 +53,15 @@ def connect_and_subscribe():
         client.subscribe(topic_subCaldera)
         myLog('Connected to %s MQTT broker, subscribed to %s topic' % (mqtt_server, topic_subCaldera))
         return client
+    except KeyboardInterrupt:
+        pass        
     except Exception as e:
         myLog('Connect&Subscribe>'+str(e))
         restart_and_reconnect()
 
 def restart_and_reconnect():
     myLog('Failed to connect to MQTT broker. Reconnecting...')
-    time.sleep(10)
+    time.sleep(5)
     myLog('Reset!!')
     machine.reset()
 
@@ -66,21 +70,25 @@ def publicaMQTT(topic,msg):
     try:
         myLog('MQTT> ' + str(topic)+ ':' + str(msg))    
         client.publish(topic,msg) # qos = 1 
+    except KeyboardInterrupt:
+        pass        
     except Exception as e:
         myLog('Publish>' + str(e))
 
 def showSetCalderaStatus():
     global client
-    msg = caldera_test.checkCaldera()
-    if msg == 'On':
+    state = caldera_test.checkCaldera()
+    if state == 'On':
         print('Caldera:On')
         publicaMQTT(topic_subLedRGB, "Red")
+        time.sleep_ms(50)
+        publicaMQTT(topic_subLedRGB, "Black")
     else:
         print('Caldera:Off')
         publicaMQTT(topic_subLedRGB, "Black")
-    publicaMQTT(topic_subCalderaStatus, msg)
+    publicaMQTT(topic_subCalderaStatus, state)
 
-def mainBeta(everySeconds=60):
+def mainBeta(everySeconds=10):
     global client
     client = connect_and_subscribe() # connect and get a client reference
     last_Temp = 0
@@ -88,6 +96,8 @@ def mainBeta(everySeconds=60):
     while True :
         try:
             client.check_msg() # Check por new messages and call the callBack function
+        except KeyboardInterrupt:
+            pass
         except Exception as e:
             myLog('Error check_msg: ' + str(e))
             restart_and_reconnect()

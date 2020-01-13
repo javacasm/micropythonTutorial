@@ -443,6 +443,7 @@ display.show()
 ## Uso de Ficheros
 
 TODO: Ponerlo al principio cuando se ve como subirlos
+https://docs.micropython.org/en/latest/esp8266/tutorial/filesystem.html
 
 import os
 print(os.listdir())

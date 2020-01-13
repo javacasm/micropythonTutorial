@@ -6,8 +6,9 @@
 # Test en http://micropython.org/webrepl/#192.168.1.46:8266/
 
 ## TODO
-
 # Fuente 4x5 https://forum.micropython.org/viewtopic.php?t=3839
+# utilidad para usar otros fonts https://github.com/peterhinch/micropython-font-to-py
+
 import pcd8544
 from machine import Pin, SPI
 import time

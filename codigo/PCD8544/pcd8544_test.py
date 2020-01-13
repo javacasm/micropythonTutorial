@@ -1,7 +1,13 @@
 # Ejemplo de uso de pantalla Nokia 5119 con pcd8544
-# Tomado de https://github.com/mcauser/MicroPython-ESP8266-DHT-Nokia-5110/blob/master/readme.md
 # https://github.com/mcauser/micropython-pcd8544
+# Tomado de https://github.com/mcauser/MicroPython-ESP8266-DHT-Nokia-5110/blob/master/readme.md
 
+
+# Test en http://micropython.org/webrepl/#192.168.1.46:8266/
+
+## TODO
+
+# Fuente 4x5 https://forum.micropython.org/viewtopic.php?t=3839
 import pcd8544
 from machine import Pin, SPI
 import time

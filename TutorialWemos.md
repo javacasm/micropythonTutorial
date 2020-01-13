@@ -491,3 +491,5 @@ It’s also possible to make more advanced requests, adding special headers
 [Tutorial](https://micropython-on-wemos-d1-mini.readthedocs.io/en/latest/shields.html)
 
 [Ejemplos para arduino de los shields](https://github.com/wemos/D1_mini_Examples)
+
+[Micropython: python for devices](https://realpython.com/micropython/)

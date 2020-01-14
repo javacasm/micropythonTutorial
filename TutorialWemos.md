@@ -321,15 +321,29 @@ To make newer I2C sensors work in backwards compatible 1-wire mode, you must con
 
 ## SHT30
 
-https://pypi.org/project/micropython-sht30/
+[Instalacion via PyPi](
+https://pypi.org/project/micropython-sht30/)
 
-https://github.com/rsc1975/micropython-sht30
+[Módulo](
+https://github.com/rsc1975/micropython-sht30)
 
 https://github.com/rsc1975/micropython-sht30/blob/master/sht30.py
 
 ![front](https://imgaz.staticbg.com/images/oaupload/banggood/images/B9/94/08fe3318-c7cf-4a5e-9632-1b4a0656d7ce.jpg.webp)
 
 ![back](https://imgaz.staticbg.com/images/oaupload/banggood/images/23/30/0b3a3506-feb6-4cb4-b319-07b7ace085ce.jpg)
+
+```python
+from sht30 import SHT30
+
+sensor = SHT30()
+
+try:
+    t, h = sensor.measure()
+except SHT30Error as ex:
+    print('Error:', ex)
+```
+
 
 ## Pantalla OLED 
 

@@ -12,7 +12,7 @@ import helpFiles    # para free y df
 import utime
 from Utils import myLog
 
-v = '1.3.6'
+v = '1.2'
 
 client_id = ubinascii.hexlify(machine.unique_id())
 

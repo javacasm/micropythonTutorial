@@ -280,6 +280,56 @@ ds.read_temp(roms[0]) # 30.625
 
 ```
 
+## Sensor de temperatura y humedad DHT12 (I2C)
+
+Sensor de temperatura y humedad DHT12 vía I2C con los pines D1 y D2
+
+![front](https://imgaz.staticbg.com/images/oaupload/banggood/images/C5/33/31314291-903e-40e6-a89d-4d8c63b28449.jpg.webp)
+
+![back](https://imgaz.staticbg.com/thumb/large/oaupload/banggood/images/5E/DC/9413fefa-e192-4f61-b6ad-170c393f4fa0.jpg.webp)
+
+![Componente](https://github.com/mcauser/micropython-dht12/raw/master/docs/DHT12.jpg)
+
+[Módulo y ejemplo](https://github.com/mcauser/micropython-dht12)
+
+
+```python
+import dht12
+from machine import I2C, Pin
+i2c = I2C(scl=Pin(5), sda=Pin(4))
+sensor = dht12.DHT12(i2c)
+sensor.measure()
+print(sensor.temperature())
+print(sensor.humidity())
+```
+
+From [Temperature Sensor](https://docs.micropython.org/en/latest/esp8266/tutorial/dht.html#temperature-and-humidity) in esp8266 micropython tutorial
+```
+Sensor without I2C in 1-wire mode (eg. DHT11, DHT22, AM2301, AM2302):
+
+1=VDD, 2=Data, 3=NC, 4=GND
+Sensor with I2C in 1-wire mode (eg. DHT12, AM2320, AM2321, AM2322):
+
+1=VDD, 2=Data, 3=GND, 4=GND
+Sensor with I2C in I2C mode (eg. DHT12, AM2320, AM2321, AM2322):
+
+1=VDD, 2=SDA, 3=GND, 4=SCL
+You should use pull-up resistors for the Data, SDA and SCL pins.
+
+To make newer I2C sensors work in backwards compatible 1-wire mode, you must connect both pins 3 and 4 to GND. This disables the I2C interface.
+```
+
+## SHT30
+
+https://pypi.org/project/micropython-sht30/
+
+https://github.com/rsc1975/micropython-sht30
+
+https://github.com/rsc1975/micropython-sht30/blob/master/sht30.py
+
+![front](https://imgaz.staticbg.com/images/oaupload/banggood/images/B9/94/08fe3318-c7cf-4a5e-9632-1b4a0656d7ce.jpg.webp)
+
+![back](https://imgaz.staticbg.com/images/oaupload/banggood/images/23/30/0b3a3506-feb6-4cb4-b319-07b7ace085ce.jpg)
 
 ## Pantalla OLED 
 

@@ -12,7 +12,7 @@ import helpFiles    # para free y df
 import utime
 from Utils import myLog
 
-v = '1.2'
+v = '1.2.3'
 
 client_id = ubinascii.hexlify(machine.unique_id())
 
@@ -32,7 +32,7 @@ mqtt_server = '192.168.1.100'
 def sub_CheckTopics(topic, msg):
     global client
     try:
-        myLog("MQTT<" + str(topic) + ':' + str(msg))
+        myLog("MQTT < " + str(topic.decode("utf-8")) + ':' + str(msg.decode("utf-8")))
         if topic == topic_subLed:     # Check for Led Topic
             if msg == b'On':
                 print('Led:On')
@@ -66,6 +66,7 @@ def connect_and_subscribe():
     except Exception as e:
         myLog('Connect&Subscribe>'+str(e))
         restart_and_reconnect()
+        
 def restart_and_reconnect():
     myLog('Failed to connect to MQTT broker. Reconnecting...')
     time.sleep(5)
@@ -75,7 +76,7 @@ def restart_and_reconnect():
 def publicaMQTT(topic,msg):
     global client
     try:
-        myLog('MQTT> ' + str(topic)+ ':' + str(msg))    
+        myLog('MQTT > ' + str(topic.decode("utf-8"))+ ':' + str(msg.decode("utf-8")))    
         client.publish(topic,msg) # qos = 1 
     except KeyboardInterrupt:
         pass
@@ -97,9 +98,9 @@ def mainBeta(everySeconds=60):
         if utime.ticks_diff(now, last_Temp) > (everySeconds*1000):
             last_Temp = now
             try:            
-                publicaMQTT(topic_subTemp, MeteoSalon.bme.temperature)
-                publicaMQTT(topic_subPress, MeteoSalon.bme.pressure)
-                publicaMQTT(topic_subHum, MeteoSalon.bme.humidity)
+                publicaMQTT(topic_subTemp, MeteoSalon.bme.temperature.encode('utf-8'))
+                publicaMQTT(topic_subPress, MeteoSalon.bme.pressure.encode('utf-8'))
+                publicaMQTT(topic_subHum, MeteoSalon.bme.humidity.encode('utf-8'))
             except KeyboardInterrupt:
                 pass
             except Exception as e:

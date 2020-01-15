@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.2'
+v = '1.2.1'
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -28,7 +28,7 @@ mqtt_server = '192.168.1.100'
 def sub_CheckTopics(topic, msg):
     global client
     try:
-        myLog("MQTT<" + str(topic) + ':' + str(msg))
+        myLog("MQTT < " + str(topic.decode("utf-8")) + ':' + str(msg.decode("utf-8")))
         if topic == topic_subCaldera:     # Check for Led Topic
             if msg == b'On':
                 caldera_test.enciendeCaldera()
@@ -68,7 +68,7 @@ def restart_and_reconnect():
 def publicaMQTT(topic,msg):
     global client
     try:
-        myLog('MQTT> ' + str(topic)+ ':' + str(msg))    
+        myLog('MQTT > ' + str(topic.decode("utf-8"))+ ':' + str(msg.decode("utf-8")))    
         client.publish(topic,msg) # qos = 1 
     except KeyboardInterrupt:
         pass        
@@ -78,8 +78,9 @@ def publicaMQTT(topic,msg):
 def showSetCalderaStatus():
     global client
     state = caldera_test.checkCaldera()
-    print('Caldera: '+state)
-    publicaMQTT(topic_subCalderaStatus, state)
+    publicaMQTT(topic_subCalderaStatus, state.encode("utf-8"))
+    # myLog('Caldera: '+state)
+
 
 def mainBeta(everySeconds=10):
     global client

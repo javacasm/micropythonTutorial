@@ -4,7 +4,16 @@
 # SCL       D4 (GPIO02)
 # LED RGB   D2 (GPIO04)
 
-import neopixel, machine, NeoPixelTHO, time, Wemos, BME280
+import neopixel 
+import machine
+import time
+import BME280
+
+import NeoPixelTHO
+import Wemos
+
+
+v = '1.2.1'
 
 # LedRGBN
 ledRGB = neopixel.NeoPixel(machine.Pin(Wemos.D2),1) # Led RGB through the Hole en pin D4 (GPIO4)
@@ -28,7 +37,7 @@ def encendemosTodo():
 ## Apagamos todo
 def apagamosTodo():
     led.on()
-    color(b'Black')
+    color(NeoPixelTHO.Black)
 
 
 def start():

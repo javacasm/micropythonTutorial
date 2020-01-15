@@ -204,7 +204,11 @@ servo.duty(115) # Posicion maxima
 
 ```
 
-### TODO: analógicos en A0
+### Lectura de valores analógicos 
+
+Sólo dispone de una entrada analógico A0
+
+Los valores de la función **read()** estarán entre 0 (para 0.0 voltios) y 1024 (para 1.0 voltio). Hay que tener en cuenta que la entrada sólo soporta un máximo de 1.0 voltios por lo que para medir voltajes mayores es necesario usar un divisor de voltaje.
 
 ```python
 import machine
@@ -213,6 +217,7 @@ adc = machine.ADC(0)            # create ADC object on ADC pin
 adc.read()              # read value, 0-1024
 ```		
 
+[Documentacion sobre esp8266](https://docs.micropython.org/en/latest/esp8266/quickref.html#adc-analog-to-digital-conversion)
 
 ## Neopixel
 

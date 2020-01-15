@@ -36,16 +36,45 @@ import machine
 adc = machine.ADC(0)
 
 def getBatteryVoltage():
-    vRaw = adc.read()
-    volt = map (vRaw,min,max,0, )
-    return volt
+ vRaw = adc.read()
+ volt = map (vRaw,min,max,0, )
+ return volt
 
 
 def getBatteryLevel():
-    vRaw = adc.read()
-    volt = map (vRaw,min,max,0,100)
-    return volt
+ vRaw = adc.read()
+ volt = map (vRaw,min,max,0,100)
+ return volt
 ```
+
+```python
+import time
+import machine 
+import pcd8544_test  
+pcd8544_test.init()
+pcd8544_test.initFB()
+
+adc = machine.ADC(0) 
+
+pcd8544_test.showText(0,0,'hola')
+pcd8544_test.clear() 
+while True:
+    value = adc.read()
+    print(value)
+    pcd8544_test.showText(0,0,str(value))  
+    time.sleep(1)
+    pcd8544_test.clear()
+```
+
+|ADC|Voltaje
+|---|---
+|909|3,88
+|912|3,89
+|914|3,90
+|916|3,91
+|919|3,92
+|921|3,93
+|923|3,94
 
 ## ADC(1) ¿para medir el voltaje de la laimentación de 3.3v?
 

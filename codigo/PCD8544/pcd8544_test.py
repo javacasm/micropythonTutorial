@@ -13,8 +13,12 @@ import pcd8544
 from machine import Pin, SPI
 import time
 lcd = None
+fb = None
+buffer = None
+bl = None
 def init():
     global lcd
+    global bl
     spi = SPI(1)
     spi.init(baudrate=2000000, polarity=0, phase=0)
     cs = Pin(2)
@@ -27,8 +31,20 @@ def init():
     lcd = pcd8544.PCD8544(spi, cs, dc, rst)
 
     lcd.init()
+    print('LCD init')
     lcd.contrast(50)
-    
+def contrast(value):
+    global lcd
+    lcd.contrast(value)
+        
+def blOn():
+    global bl
+    bl.off()
+
+def blOff():
+    global bl
+    bl.on()
+
 def test():
     global lcd
     # bitmap smiley (horzontal msb)
@@ -47,14 +63,34 @@ def test():
     print('encendemos')
     lcd.power_on()
 
+def initFB():
+    global lcd
+    global buffer
+    global fb
+    import framebuf
+    print('Init framebuffer')
+    buffer = bytearray((lcd.height // 8) * lcd.width)
+    fb = framebuf.FrameBuffer1(buffer, lcd.width, lcd.height)
+
+def showText(x,y,texto):
+    global lcd
+    global fb
+    global buffer
+    fb.text(texto, x, y, 1)
+    lcd.data(buffer)
+
+def clear():
+    global lcd
+    fb.fill(0)
+    lcd.clear()
+
 def testFB():
 
     # https://github.com/mcauser/MicroPython-ESP8266-DHT-Nokia-5110
     global lcd
-    import framebuf
-    print('framebuffer')
-    buffer = bytearray((lcd.height // 8) * lcd.width)
-    fb = framebuf.FrameBuffer1(buffer, lcd.width, lcd.height)
+    global fb
+    
+    print('test framebuffer')
 
     # Light every pixel:
     print('todo a 1')
@@ -66,7 +102,7 @@ def testFB():
     fb.fill(0)
     lcd.data(buffer)
     time.sleep(2)
-    # Print Hello, World! using the 8x8 font:
+    print('Print Hello, World! using the 8x8 font:')
 
     fb.text("Hello,", 0, 0, 1)
     fb.text("World!", 0, 9, 1)

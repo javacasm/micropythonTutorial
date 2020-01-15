@@ -19,7 +19,7 @@ Conectamos con un cable micro-USB
 esptool.py --port /dev/ttyUSB0 erase_flash
 ```
 
-
+    
 ```
 esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect-fm dio 0 ~/Descargas/esp8266-20191121-v1.11-586-g1530fda9c.bin 
 ```
@@ -62,6 +62,7 @@ Contestamos a lo que nos pregunta, establecemos una contraseña de acceso y fina
 Configuramos la red (esta configuración se mantendrá tras un reset)
 
 ```python
+>>> import network
 >>> wl = network.WLAN(network.STA_IF)
 >>> wl.active(True)
 >>> wl.scan()
@@ -70,6 +71,18 @@ Configuramos la red (esta configuración se mantendrá tras un reset)
 
 ```
 
+En un momento dado podemos saber la red a la que estamos conectada con 
+
+```python
+wl.config('essid')
+```
+Más parámetros en la [documentación](https://docs.micropython.org/en/latest/library/network.WLAN.html#network.WLAN.config)
+
+También podemos ver los valores de determinados parámetros de la conexión actual con el método **status**
+
+```python
+wl.status('rssi') # Para ver la intensidad de la señal wifi
+```
 ## Acceso a fecha y hora
 
 ```python
@@ -194,7 +207,9 @@ servo.duty(115) # Posicion maxima
 ### TODO: analógicos en A0
 
 ```python
-adc = ADC(0)            # create ADC object on ADC pin
+import machine
+
+adc = machine.ADC(0)            # create ADC object on ADC pin
 adc.read()              # read value, 0-1024
 ```		
 

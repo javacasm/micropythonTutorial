@@ -25,3 +25,26 @@ Sobre esp32 https://forum.arduino.cc/index.php?topic=595924.0
 ![](https://imgaz.staticbg.com/images/oaupload/banggood/images/1C/3D/a53b414b-8598-4daf-b7ad-15a270f5dabb.jpg)
 
 El jumper J2 nos permite medir el voltaje de la batería (con una resistencia de 130kOhmios en serie)
+
+```python
+import machine
+
+adc = machine.ADC(0)
+
+def getBatVoltage():
+    vRaw = adc.read()
+    volt = map (vRaw,min,max,0, )
+    return volt
+
+
+def getBatLevel():
+    vRaw = adc.read()
+    volt = map (vRaw,min,max,0,100)
+    return volt
+```
+
+## ADC(1) ¿para medir el nivel de voltaje?
+
+https://github.com/micropython/micropython/issues/2352
+Parece que si medimos esto no podemos usar ADC(0) https://nodemcu.readthedocs.io/en/dev/modules/adc/#adcforce_init_mode https://bbs.espressif.com/viewtopic.php?t=827
+

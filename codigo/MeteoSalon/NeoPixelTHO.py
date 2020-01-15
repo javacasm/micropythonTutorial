@@ -2,20 +2,29 @@ import machine,neopixel
 
 # Led compatible neopixel https://a.pololu-files.com/picture/0J5433.631.jpg 
 # Using GRB format
+
+v = '1.2.1'
+
+Red = b'Red'
+Black = b'Black'
+Blue = b'Blue'
+Green =b'Green'
+White = b'White'
+
 def colorByName(msg):
     col = (0,0,0)
-    if msg == b'Red':
+    if msg == Red:
         col = (0,150,0)
-    elif msg == b'Black':
+    elif msg == Black:
         col = (0,0,0)
-    elif msg == b'Blue':
+    elif msg == Blue:
         col = (0,0,150)
-    elif msg == b'Green':
+    elif msg == Green:
         col = (150,0,0)
-    elif msg == b'White':
+    elif msg == White:
         col = (255,255,255)
     elif msg == b'TinyBlue':
-        col = (0,0,10)        
+        col = (0,0,10)
     elif msg == b'Yellow':
         col = (244,252,3)
     elif msg == b'Orange':

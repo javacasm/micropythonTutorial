@@ -58,12 +58,17 @@ adc = machine.ADC(0)
 
 pcd8544_test.showText(0,0,'hola')
 pcd8544_test.clear() 
+N = 50
 while True:
-    value = adc.read()
+    media = 0
+    for i in range(0,N):
+        value = adc.read()
+        media += value*1.0
+        time.sleep(0.1)
+    value = media/N
     print(value)
-    pcd8544_test.showText(0,0,str(value))  
-    time.sleep(1)
     pcd8544_test.clear()
+    pcd8544_test.showText(0,0,str(value))  
 ```
 
 |ADC|Voltaje

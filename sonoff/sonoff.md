@@ -18,6 +18,10 @@ Dispositivo que además de la activación remota mide el consumo del dispositivo
 
 Para ello usa un HLW8012 ([Enlace](https://tinkerman.cat/post/hlw8012-ic-new-sonoff-pow))
 
+[Modulo con HLW8032](https://es.aliexpress.com/item/33029897807.html) [Libreria](https://github.com/xoseperez/hlw8012)
+
+![conexion](https://microsolution.com.pk/wp-content/uploads/2019/08/HLW8012_High-Precision_Energy_Metering_Module_Arduino_Energy_Monitoring.png)
+
 [Descripción](https://tinkerman.cat/post/the-sonoff-pow/)
 
 [Pagina del producto](https://www.itead.cc/wiki/Sonoff_Pow)

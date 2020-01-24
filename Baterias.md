@@ -56,7 +56,8 @@ pcd8544_test.initFB()
 
 adc = machine.ADC(0) 
 
-pcd8544_test.showText(0,0,'hola')
+pcd8544_test.showText(0,0,'Midiendo')
+time.sleep(1)
 pcd8544_test.clear() 
 N = 50
 while True:

@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.2.1'
+v = '1.2.3'
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -22,6 +22,8 @@ topic_subCaldera = topic_sub + b'/caldera'
 topic_subFree = topic_sub + b'/free'
 topic_subMem = topic_sub + b'/mem'
 topic_subLedRGB = topic_sub + b'/ledRGB'
+topic_subBatRaw = topic_sub + b'/CalBatteryRaw'
+topic_subBatVolt = topic_sub + b'/CalBatteryVolt'
 
 mqtt_server = '192.168.1.100'
 
@@ -87,6 +89,7 @@ def mainBeta(everySeconds=10):
     client = connect_and_subscribe() # connect and get a client reference
     last_Temp = 0
     showSetCalderaStatus()
+    adc = machine.ADC(0)
     while True :
         try:
             client.check_msg() # Check por new messages and call the callBack function
@@ -99,5 +102,9 @@ def mainBeta(everySeconds=10):
         if utime.ticks_diff(now, last_Temp) > (everySeconds*1000):
             last_Temp = now
             showSetCalderaStatus()
+            batRaw = adc.read()
+            publicaMQTT(topic_subBatRaw,str(batRaw).encode('utf-8'))            
+            batVolt = batRaw*4.36/1023
+            publicaMQTT(topic_subBatVolt,('%.2f' % batVolt).encode('utf-8'))                   
         time.sleep_ms(100)
 

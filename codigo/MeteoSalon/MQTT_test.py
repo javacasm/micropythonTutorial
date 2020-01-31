@@ -12,7 +12,7 @@ import helpFiles    # para free y df
 import utime
 from Utils import myLog
 
-v = '1.3.8'
+v = '1.3.10'
 
 client_id = ubinascii.hexlify(machine.unique_id())
 
@@ -24,8 +24,8 @@ topic_subTemp = topic_sub + b'/Temp'
 topic_subHum = topic_sub + b'/Hum'
 topic_subPress = topic_sub + b'/Press'
 topic_subLedRGB = topic_sub + b'/ledRGB'
-topic_subBatRaw = topic_sub + b'/baterryRaw'
-topic_subBatVolt = topic_sub + b'/baterryVolt'
+topic_subBatRaw = topic_sub + b'/BatteryRaw'
+topic_subBatVolt = topic_sub + b'/BatteryVolt'
 topic_pub = b'hello'
 
 mqtt_server = '192.168.1.100'
@@ -104,7 +104,7 @@ def mainBeta(everySeconds=60):
                 batRaw = adc.read()
                 publicaMQTT(topic_subBatRaw,str(batRaw).encode('utf-8'))            
                 batVolt = batRaw*4.367/1023
-                publicaMQTT(topic_subBatVolt,str(batVolt).encode('utf-8'))   
+                publicaMQTT(topic_subBatVolt,("%.2f".%batVolt).encode('utf-8'))   
                 publicaMQTT(topic_subTemp, MeteoSalon.bme.temperature.encode('utf-8'))
                 publicaMQTT(topic_subPress, MeteoSalon.bme.pressure.encode('utf-8'))
                 publicaMQTT(topic_subHum, MeteoSalon.bme.humidity.encode('utf-8'))

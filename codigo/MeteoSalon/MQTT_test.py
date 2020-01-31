@@ -12,7 +12,7 @@ import helpFiles    # para free y df
 import utime
 from Utils import myLog
 
-v = '1.2.3'
+v = '1.3.8'
 
 client_id = ubinascii.hexlify(machine.unique_id())
 
@@ -24,6 +24,8 @@ topic_subTemp = topic_sub + b'/Temp'
 topic_subHum = topic_sub + b'/Hum'
 topic_subPress = topic_sub + b'/Press'
 topic_subLedRGB = topic_sub + b'/ledRGB'
+topic_subBatRaw = topic_sub + b'/baterryRaw'
+topic_subBatVolt = topic_sub + b'/baterryVolt'
 topic_pub = b'hello'
 
 mqtt_server = '192.168.1.100'
@@ -86,6 +88,7 @@ def publicaMQTT(topic,msg):
 def mainBeta(everySeconds=60):
     connect_and_subscribe() # connect and get a client reference
     last_Temp = utime.ticks_ms()
+    adc = machine.ADC(0)
     while True :
         try:
             client.check_msg() # Check por new messages and call the callBack function
@@ -97,7 +100,11 @@ def mainBeta(everySeconds=60):
         now = utime.ticks_ms()
         if utime.ticks_diff(now, last_Temp) > (everySeconds*1000):
             last_Temp = now
-            try:            
+            try:
+                batRaw = adc.read()
+                publicaMQTT(topic_subBatRaw,str(batRaw).encode('utf-8'))            
+                batVolt = batRaw*4.367/1023
+                publicaMQTT(topic_subBatVolt,str(batVolt).encode('utf-8'))   
                 publicaMQTT(topic_subTemp, MeteoSalon.bme.temperature.encode('utf-8'))
                 publicaMQTT(topic_subPress, MeteoSalon.bme.pressure.encode('utf-8'))
                 publicaMQTT(topic_subHum, MeteoSalon.bme.humidity.encode('utf-8'))

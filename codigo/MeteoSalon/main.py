@@ -1,13 +1,16 @@
-v = '1.3.6'
+v = '1.3.8'
 import machine
-import myDateTime
-
-import MQTT_test
-
-print(myDateTime.setRTC())
 
 try:
+
+    import myDateTime
+
+    import MQTT_test
+
+    print(myDateTime.setRTC())
+
     MQTT_test.mainBeta()
+    
 except Exception as e:
     print(str(e))
     machine.reset()

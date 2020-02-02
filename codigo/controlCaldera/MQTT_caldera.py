@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.2.3'
+v = '1.2.5'
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -103,8 +103,9 @@ def mainBeta(everySeconds=10):
             last_Temp = now
             showSetCalderaStatus()
             batRaw = adc.read()
-            publicaMQTT(topic_subBatRaw,str(batRaw).encode('utf-8'))            
-            batVolt = batRaw*4.36/1023
-            publicaMQTT(topic_subBatVolt,('%.2f' % batVolt).encode('utf-8'))                   
+            if batRaw > 5:
+                publicaMQTT(topic_subBatRaw,str(batRaw).encode('utf-8'))            
+                batVolt = batRaw*4.36/1023
+                publicaMQTT(topic_subBatVolt,('%.2f' % batVolt).encode('utf-8'))                   
         time.sleep_ms(100)
 

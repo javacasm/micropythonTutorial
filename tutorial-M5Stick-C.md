@@ -1,6 +1,8 @@
 # M5Stick-C 
 Micro Stack 
 
+https://lemariva.com/blog/2020/02/m5stack-micropython-and-bluetooth-ble
+
 ## Firmware
 
 https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/firmwares

@@ -6,6 +6,11 @@ https://github.com/javacasm/mp3Player
 
 
 ## I2S
+[I2S PCM5102 decodificador DAC ](https://es.aliexpress.com/item/4000049217053.html?spm=a2g0s.9042311.0.0.274263c01KYxdd)
+
+[microfono](https://es.aliexpress.com/item/32960945048.html?spm=a2g0s.9042311.0.0.274263c01KYxdd)
+
+[microfono SPH0645 I2S Módulo de sensor de ruptura de micrófono MEMS SPH0645LM4H](https://es.aliexpress.com/item/4000059212862.html?spm=a2g0s.9042311.0.0.274263c01KYxdd)
 
 ### MAX98357
 

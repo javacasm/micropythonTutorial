@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.2.5'
+v = '1.2.8'
 
 from umqttsimple import MQTTClient
 import ubinascii
@@ -22,8 +22,9 @@ topic_subCaldera = topic_sub + b'/caldera'
 topic_subFree = topic_sub + b'/free'
 topic_subMem = topic_sub + b'/mem'
 topic_subLedRGB = topic_sub + b'/ledRGB'
-topic_subBatRaw = topic_sub + b'/CalBatteryRaw'
-topic_subBatVolt = topic_sub + b'/CalBatteryVolt'
+topic_subCalInit = topic_sub + b'/calInit' 
+topic_subBatRaw = topic_sub + b'/calBatteryRaw'
+topic_subBatVolt = topic_sub + b'/calBatteryVolt'
 
 mqtt_server = '192.168.1.100'
 
@@ -62,6 +63,7 @@ def connect_and_subscribe():
         restart_and_reconnect()
 
 def restart_and_reconnect():
+    publicaMQTT(topic_subCalInit,b'Reset')
     myLog('Failed to connect to MQTT broker. Reconnecting...')
     time.sleep(5)
     myLog('Reset!!')
@@ -88,6 +90,7 @@ def mainBeta(everySeconds=10):
     global client
     client = connect_and_subscribe() # connect and get a client reference
     last_Temp = 0
+    publicaMQTT(topic_subCalInit,b'On')
     showSetCalderaStatus()
     adc = machine.ADC(0)
     while True :

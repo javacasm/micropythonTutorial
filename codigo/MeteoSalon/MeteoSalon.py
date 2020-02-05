@@ -13,7 +13,7 @@ import NeoPixelTHO
 import Wemos
 
 
-v = '1.2.1'
+v = '1.2.2'
 
 # LedRGBN
 ledRGB = neopixel.NeoPixel(machine.Pin(Wemos.D2),1) # Led RGB through the Hole en pin D4 (GPIO4)

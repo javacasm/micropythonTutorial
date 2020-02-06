@@ -15,11 +15,13 @@ Compatible with WEMOS D1 mini
 
 [Documentacion](https://wiki.wemos.cc/products:d1_mini_shields:tft_1.4_shield)
 
-[Hosaka](https://github.com/hosaka/micropython-st7735)
+
 
 ### Librerias/modulos
 
-[boochow](https://github.com/boochow/MicroPython-ST7735)
+[boochow](https://github.com/boochow/MicroPython-ST7735) (para pyb)
+
+[Hosaka](https://github.com/hosaka/micropython-st7735) (para )
 
 [Adafruit](https://github.com/adafruit/micropython-adafruit-rgb-display)
 

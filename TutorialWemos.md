@@ -123,6 +123,8 @@ https://www.geeksforgeeks.org/python-output-formatting/
 Para facilitar el uso de los pines usaremos el módulo [Wemos.py](https://github.com/javacasm/micropythonTutorial/blob/master/codigo/Wemos.py) que nos permite usar los nombre de los pines que usa Wemos en lugar de los GPIO del ESP12 que utiliza micropython
 
 
+![Wemos pinout](./images/esp8266-wemos-d1-mini-nodemcu-pinout.png)
+
 TODO: explicación de ficheros main.py y boot.py
 TODO: Donde se guarda el prompt
 TODO: C´omo subir un fichero

@@ -8,3 +8,8 @@ led builtin?
 Comparativa/wemos ESP12
 ¿Podemos alimentarlo con 3.3v solo?
 ¿Memoria?
+
+
+# Referencia
+
+[Tutorial W600 pico by Wemos](https://docs.wemos.cc/en/latest/tutorials/w600/get_started_with_micropython_w600.html#)

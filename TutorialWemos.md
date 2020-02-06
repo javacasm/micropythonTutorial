@@ -564,6 +564,12 @@ It’s also possible to make more advanced requests, adding special headers
 
 # Referencia
 
+[Referencia Wemos](https://docs.wemos.cc/en/latest/d1/index.html)
+
+[Referencia Wemos Shields](https://docs.wemos.cc/en/latest/d1_mini_shiled/index.html)
+
+[Referencia micropython Wemos](https://docs.wemos.cc/en/latest/tutorials/index_micropython.html)
+
 [Referencia micropython](https://docs.micropython.org/en/latest/index.html)
 
 [Guía rápida micropython en el ESP8266](http://docs.micropython.org/en/latest/esp8266/quickref.html)

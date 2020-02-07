@@ -21,7 +21,11 @@ Compatible with WEMOS D1 mini
 
 [boochow](https://github.com/boochow/MicroPython-ST7735) (para pyb)
 
-[Hosaka](https://github.com/hosaka/micropython-st7735) (para )
+[Hosaka](https://github.com/hosaka/micropython-st7735) (para ESP32)
+
+[mo-pyy](https://github.com/mo-pyy/micropython-st7735-esp8266)
+
+[cheungbx](https://github.com/cheungbx/st7735-esp8266-micropython)
 
 [Adafruit](https://github.com/adafruit/micropython-adafruit-rgb-display)
 

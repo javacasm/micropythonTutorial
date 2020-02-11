@@ -13,4 +13,5 @@
 |ESP_7FB483	|192.168.1.83|60:01:94:7F:B4:83
 |ESP32 CAM|	192.168.1.137|24:0A:C4:29:9A:98
 |ESP-Bateria|192.168.1.136|
-|Wemos alimentación rota|2C:3A:E8:35:F3:CF | 192.168.1.25|http://micropython.org/webrepl/?#192.168.1.25:8266/
+|Wemos alimentación rota|2C:3A:E8:35:F3:CF | 192.168.1.25|http://micropython.org/webrepl/?#192.168.1.25:8266/\
+|Wemos compacto|98:f4:ab:da:c0:9b|192.168.1.20|http://micropython.org/webrepl/?#192.168.1.20:8266/\

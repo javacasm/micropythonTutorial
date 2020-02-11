@@ -21,7 +21,7 @@ esptool.py --port /dev/ttyUSB0 erase_flash
 
     
 ```
-esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect-fm dio 0 ~/Descargas/esp8266-20191121-v1.11-586-g1530fda9c.bin 
+esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 ~/Descargas/esp8266-20191121-v1.11-586-g1530fda9c.bin 
 ```
 
 Si usamos una **Wemos D1 mini**, que usa un ESP8265 cambiamos el parámetro dio por dout, quedando así

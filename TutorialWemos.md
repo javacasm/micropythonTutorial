@@ -118,6 +118,18 @@ https://www.geeksforgeeks.org/python-output-formatting/
 "{0}/{1:02}/{2:02} {3:02}:{4:02}:{5:02}".format(*utime.localtime(utime.time()+3600)[0:6])
 
 
+## ¿Qué versión de micropython tengo instalada?
+
+Cuando arranca la placa aparece en la descripción. Podemos provocar un reset con ctrl+D
+
+´´´python
+>>> import os
+>>> os.uname()
+´´´
+
+[Fuente](https://forum.micropython.org/viewtopic.php?t=392)
+
+
 ## Acceso a los pines
 
 Para facilitar el uso de los pines usaremos el módulo [Wemos.py](https://github.com/javacasm/micropythonTutorial/blob/master/codigo/Wemos.py) que nos permite usar los nombre de los pines que usa Wemos en lugar de los GPIO del ESP12 que utiliza micropython

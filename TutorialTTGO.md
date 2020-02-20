@@ -25,7 +25,8 @@ SRAM	SRAM de 520 kB
 
 [micropython psRAM logo](https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/issues/310)
 
-## Ejemplo C++
+## Medida del voltaje de la bateria
+### Ejemplo C++
 
 #define TFT_BL          4  // Display backlight control pin
 #define ADC_EN          14
@@ -37,6 +38,17 @@ int vref = 1100;
 
 uint16_t v = analogRead(ADC_PIN);
 float battery_voltage = ((float)v / 4095.0) * 2.0 * 3.3 * (vref / 1000.0);
+
+### Ejemplo en micropython
+
+import machine
+adcBat = machine.ADC(machine.Pin(34))
+adcBat.atten(machine.ADC.ATTN_0DB) # rango de 1.1V
+adcBat.width(machine.ADC.WIDTH_12BIT)
+
+adcValue = adcBat.read()
+voltBat = adcValue /4095 *  3.3 * 1100 / 1000
+print(voltBat*100/4.2)
 
 # TTGO ESP32 (OLED + 18650)
 

@@ -9,6 +9,16 @@ esptool.py --port /dev/ttyUSB0 erase_flash
 
 [Descargamos el firmware](http://micropython.org/download#esp32)
 
+Hay d'ia de hoy hay 3 diferentes
+
+GENERIC
+GENERIC-SPIRAM
+TinyPICO 
+
+
+[Diferencia SRAM/SPIRAM](https://forum.micropython.org/viewtopic.php?t=5519)
+
+
 ```
 esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-20180511-v1.9.4.bin
 ```
@@ -28,7 +38,18 @@ screen /dev/ttyUSB0 115200
 
 ## configuramos wifi
 
+## Modificamos el fichero **boot.py**
 
+```python
+import webrepl
+import network
+iw = network.WLAN(network.STA_IF)
+iw.active(True)
+iw.connect('OpenWrt','qazxcvbgtrewsdf')
+webrepl.start()
+iw.ifconfig()
+print('esp32 Lolin32.34')
+```
 
 ## Modelos
 

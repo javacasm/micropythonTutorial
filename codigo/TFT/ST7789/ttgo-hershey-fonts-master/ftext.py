@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Formato de fichero fnt https://penfold.owt.com/turtleplotbot/fonts.html#font-file-format
+
 import st7789py as st7789
 
 v = '1.8.1'

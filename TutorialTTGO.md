@@ -25,6 +25,19 @@ SRAM	SRAM de 520 kB
 
 [micropython psRAM logo](https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/issues/310)
 
+## Ejemplo C++
+
+#define TFT_BL          4  // Display backlight control pin
+#define ADC_EN          14
+#define ADC_PIN         34
+#define BUTTON_1        35
+#define BUTTON_2        0
+
+int vref = 1100;
+
+uint16_t v = analogRead(ADC_PIN);
+float battery_voltage = ((float)v / 4095.0) * 2.0 * 3.3 * (vref / 1000.0);
+
 # TTGO ESP32 (OLED + 18650)
 
 ![](http://forums.4fips.com/2018/4fips.com_esp32_ttgo_oled_lcd_18650_wifi_bluetooth_module.jpg)

@@ -6,6 +6,6 @@ def batLevel():
     adcBat.width(machine.ADC.WIDTH_12BIT)
     adcValue = adcBat.read()
     voltBat = adcValue * 2 * 3.6 / 4095 # el 2 por el divisor de tension
-    percentBat = voltBat*100/4.2
+    percentBat = voltBat*100/4.2 # Maximo voltaje 4.2
     print('%1.2fv - %d%%'%(voltBat,percentBat))
     return percentBat

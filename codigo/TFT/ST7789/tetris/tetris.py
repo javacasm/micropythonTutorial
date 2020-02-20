@@ -1,5 +1,10 @@
 # Tetris
 
+# ejemplo de tetris https://gist.github.com/silvasur/565419/d9de6a84e7da000797ac681976442073045c74a4
+# video tutorial https://www.youtube.com/watch?v=zfvxp7PgQ6c
+# tetris con pygame https://recursospython.com/codigos-de-fuente/tetris-pygame/
+# ![graficos](https://e3ab9255-a-62cb3a1a-s-sites.googlegroups.com/site/ddrkirby/coding-projects/keyblox/keyblox_screen_2.png?attachauth=ANoY7cqnEjNk2seGFyLINcmmdsHvspmcinJfiUlUGY9-xbn1yczq4LYae21z7EvQv7GiTO1yEtikxPcyWBL0j9__ZZXBVbOLXJvr38BfzaecvLiAEB2PPi2wPnlTF9oLFZDLVArK-1a8XczoxbN7LVVcIKXqh6pduTLULduvMLmNyfKG1MnHAevC-zeEiA48aE1_B1VeW0a_e_vjCg4zLtehc54iWqKvmXPxrLbCK21UH_kIr8NgLfgjh3PgKQwOOwDrZA3kYJPA&attredirects=0)
+
 v = '0.6'
 
 import time

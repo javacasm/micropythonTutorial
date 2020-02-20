@@ -39,6 +39,7 @@ screen /dev/ttyUSB0 115200
 ## configuramos wifi
 
 ## Modificamos el fichero **boot.py**
+Hay que hacer la conexión wifi explicitamente, por eso lo hacemos en el fichero **boot.py**
 
 ```python
 import webrepl

@@ -1,7 +1,9 @@
 # Tetris
 
-v = '0.5.4'
+v = '0.6'
+
 import time
+import machine
 import st7789py as st7789
 import fhello
 
@@ -23,13 +25,22 @@ def test_fill(l = 20 ):
 
 def fall(x=fhello.display.width//2,y=0,l=20,r=0,g=0,b=150):
     frame()
-    while y+l<fhello.display.height:
+    lButton=machine.Pin(0,machine.Pin.PULL_DOWN)
+    rButton=machine.Pin(35,machine.Pin.PULL_DOWN)
+    while y+l<fhello.display.height-1:
         fhello.display.fill_rect(x,y,l,l,back_color)
         y+=1
+        if lButton.value() == 0:
+            x -= 5
+            if x < 1 :
+                x = 1
+        if rButton.value() == 0:
+            x += 5    
+            if x  > fhello.display.width - l - 2:
+                x = fhello.display.width - l - 2
+
         tile(x,y,l,r,g,b)
         time.sleep(0.1)
-        
-
 
 def frame():
     fhello.display.fill(back_color)

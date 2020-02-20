@@ -117,6 +117,12 @@ https://www.geeksforgeeks.org/python-output-formatting/
 
 "{0}/{1:02}/{2:02} {3:02}:{4:02}:{5:02}".format(*utime.localtime(utime.time()+3600)[0:6])
 
+```python
+print('%1.2fv - %d%%'%(voltBat,percentBat))
+```
+
+[Referencia](https://www.python-course.eu/python3_formatted_output.php)
+
 
 ## ¿Qué versión de micropython tengo instalada?
 

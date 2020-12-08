@@ -85,6 +85,8 @@ wl.status('rssi') # Para ver la intensidad de la señal wifi
 ```
 ## Acceso a fecha y hora
 
+Para acceder a la fecha y hora del sistema
+
 ```python
 
 >>> rtc = machine.RTC()
@@ -242,7 +244,7 @@ adc.read()              # read value, 0-1024
 ## Neopixel
 
 ```python
-import neopixel,machine
+import neopixel, machine
 import Wemos
 
 ledRGB = neopixel.NeoPixel(machine.Pin(Wemos.D2),1) 
@@ -549,17 +551,22 @@ display.show()
 TODO: Ponerlo al principio cuando se ve como subirlos
 https://docs.micropython.org/en/latest/esp8266/tutorial/filesystem.html
 
+```python
 import os
 print(os.listdir())
+```
+
 You should see something like ['boot.py'] – that’s a list with just one file name in it. boot.py and later main.py are two special files that are executed when the board starts. boot.py is for configuration, and you can put your own code in main.py.
 
 You can create, write to and read from files like you would with normal Python:
 
+```python
 with open("myfile.txt", "w") as f:
-f.write("Hello world!")
+   f.write("Hello world!")
 print(os.listdir())
 with open("myfile.txt", "r") as f:
-print(f.read())
+   print(f.read())
+```
 
 
 ## Uso de HTTP
@@ -568,17 +575,22 @@ print(f.read())
 ### HTTP Requests
 Once you are connected to network, you can talk to servers and interact with web services. The easiest way is to just do a HTTP request – what your web browser does to get the content of web pages:
 
+```python
 import urequests
 r = urequests.get("http://duckduckgo.com/?q=micropython&format=json").json()
 print(r)
 print(r['AbstractText'])
+```
+
 You can use that to get information from websites, such as weather forecasts:
 
+```python
 import json
 import urequests
 r = urequests.get("http://api.openweathermap.org/data/2.5/weather?q=Zurich&appid=XXX").json()
 print(r["weather"][0]["description"])
 print(r["main"]["temp"] - 273.15)
+```
 It’s also possible to make more advanced requests, adding special headers
 
 

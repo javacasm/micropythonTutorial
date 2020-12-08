@@ -80,6 +80,8 @@ print('esp32 Lolin32.34')
 
 [Esquematico de Lolin32 ESP32](https://wiki.wemos.cc/_media/products:lolin32:sch_lolin32_v1.0.0.pdf)
 
+
+
 ## Referencia
 
 [Quick Reference](https://docs.micropython.org/en/latest/esp32/quickref.html)

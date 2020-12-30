@@ -1,18 +1,23 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.2.8'
+v = '1.2.13'
 
 from umqttsimple import MQTTClient
 import ubinascii
 import machine
-import Wemos        # Facilita el identificar los pines
 import time         # Para las esperas
 import helpFiles    # para free y df
 import utime
+
+import Wemos        # Facilita el identificar los pines
 import caldera_test
 import MyDateTime
-from Utils import myLog
+import config
+
+moduleName = 'MQTT_caldera'
+from Utils import myLog, identifyModule
+identifyModule(moduleName, v)
 
 client_id = ubinascii.hexlify(machine.unique_id())
 
@@ -26,7 +31,7 @@ topic_subCalInit = topic_sub + b'/calInit'
 topic_subBatRaw = topic_sub + b'/calBatteryRaw'
 topic_subBatVolt = topic_sub + b'/calBatteryVolt'
 
-mqtt_server = '192.168.1.100'
+
 
 def sub_CheckTopics(topic, msg):
     global client
@@ -47,14 +52,14 @@ def sub_CheckTopics(topic, msg):
         myLog('Error checking topics>' + str(e))
 
 def connect_and_subscribe():
-    global client, client_id, mqtt_server, topic_sub, topic_subLedRGB, topic_subLed
+    global client, client_id, topic_sub, topic_subLedRGB, topic_subLed
     try:
-        client = MQTTClient(client_id, mqtt_server)
+        client = MQTTClient(client_id, config.MQTT_SERVER)
         client.set_callback(sub_CheckTopics)
         client.connect()
         client.subscribe(topic_subFree)
         client.subscribe(topic_subCaldera)
-        myLog('Connected to %s MQTT broker, subscribed to %s topic' % (mqtt_server, topic_subCaldera))
+        myLog('Connected to %s MQTT broker, subscribed to %s topic' % (config.MQTT_SERVER, topic_subCaldera))
         return client
     except KeyboardInterrupt:
         pass        

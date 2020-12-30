@@ -3,7 +3,7 @@
 # https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
 # https://forum.micropython.org/viewtopic.php?t=1940
 
-# v1.3.2
+v = '1.3.5'
 
 try:
     import usocket as socket
@@ -19,6 +19,10 @@ import helpFiles
 import Wemos
 import caldera_test
 import Wemos
+
+moduleName = 'WebServerControlRele'
+from Utils import identifyModule
+myLog(moduleName, v)
 
 
 def web_page():

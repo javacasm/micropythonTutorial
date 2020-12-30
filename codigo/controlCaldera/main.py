@@ -1,16 +1,22 @@
-v = '1.3.8'
+v = '1.4.6'
 
-import machine
+# import machine
+
+moduleName = 'main-Caldera'
+from Utils import identifyModule, myLog
+identifyModule(moduleName, v)
 
 try:
     import myDateTime
     # import WebServerControlRele    
     import MQTT_caldera
-    print(myDateTime.setRTC())
-
+    print('Time: ' + myDateTime.setRTC())
     MQTT_caldera.mainBeta()
+
 except Exception as e:
     print(str(e))
-    machine.reset()
+    myLog('SelfReset')
+    # machine.reset()
+    myLog('Not done')
 
 # WebServerControlRele.runServer()

@@ -1,4 +1,6 @@
 .vscode/
 *.backup
 *~
-
+micropython_IPs.md
+calibracionBateria.ods
+.gitignore

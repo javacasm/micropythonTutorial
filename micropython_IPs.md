@@ -16,3 +16,4 @@
 |Wemos alimentación rota|2C:3A:E8:35:F3:CF | 192.168.1.25|http://micropython.org/webrepl/?#192.168.1.25:8266
 |Wemos compacto|98:f4:ab:da:c0:9b|192.168.1.20|http://micropython.org/webrepl/?#192.168.1.20:8266
 |Wemos Pruebas solar|84:0d:8e:8c:94:3a| 192.168.1.35 |http://micropython.org/webrepl/?#192.168.1.35:8266
+|Wemos D1 R32 RGB Ring|a4:cf:12:6b:37:08|192.168.1.76|http://micropython.org/webrepl/?#192.168.1.76:8266

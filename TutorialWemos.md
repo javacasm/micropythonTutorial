@@ -157,7 +157,7 @@ Vamos a empezar encendiendo apagando el led de la placa ESP12 conectado a D4
 import machine
 import wemos
 
-led = machine.Pin(Wemos.D4, machine.Pin.OUT) # LED Builtin
+led = machine.Pin(wemos.D4, machine.Pin.OUT) # LED Builtin
 
 led.off() # Esta invertido
 led.on()
@@ -173,7 +173,7 @@ También se puede hacer **led.value(1)** ó **led.value(0)** o usar **led.value(
 import machine
 import wemos
 
-rele = machine.Pin(Wemos.D1,machine.Pin.OUT)
+rele = machine.Pin(wemos.D1,machine.Pin.OUT)
 
 rele.on() # Encendemos el rele
 

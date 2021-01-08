@@ -1,4 +1,4 @@
-v = '1.5.0'
+v = '1.5.2'
 
 # import machine
 
@@ -10,7 +10,7 @@ try:
     import myDateTime
     # import WebServerControlRele    
     import MQTT_caldera
-    print('Time: ' + myDateTime.setRTC())
+    myLog('start Time: ' + myDateTime.setRTC(), saveToFile=True)
     MQTT_caldera.mainBeta()
 
 except Exception as e:

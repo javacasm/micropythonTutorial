@@ -1,7 +1,7 @@
 # MQTT test 
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
-v = '1.2.13'
+v = '1.2.14'
 
 from umqttsimple import MQTTClient
 import ubinascii

@@ -1,9 +1,9 @@
 import machine, neopixel
 import Wemos
 
-v = '1.7'
+v = '1.8'
 moduleName = 'caldera_test'
-from Utils import identifyModule
+from Utils import identifyModule, myLog
 identifyModule(moduleName,  v)
 
 # Using a wemos https://escapequotes.net/wp-content/uploads/2016/02/esp8266-wemos-d1-mini-pinout.png
@@ -25,11 +25,13 @@ def enciendeCaldera():
     rele.on()
     np[0] = red
     np.write()
+    myLog('Caldera ON',saveToFile=True)
 
 def apagaCaldera():
     rele.off()
     np[0] = blue
     np.write()
+    myLog('Caldera OFF',saveToFile=True)
 
 
 def checkCaldera():

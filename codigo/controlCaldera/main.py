@@ -1,4 +1,4 @@
-v = '1.4.6'
+v = '1.5.0'
 
 # import machine
 
@@ -14,9 +14,9 @@ try:
     MQTT_caldera.mainBeta()
 
 except Exception as e:
-    print(str(e))
-    myLog('SelfReset')
-    # machine.reset()
-    myLog('Not done')
+    errorMsg = str(e)
+    myLog(errorMsg,saveToFile = True)
+    myLog('SelfReset',saveToFile = True)
+    machine.reset()
 
 # WebServerControlRele.runServer()

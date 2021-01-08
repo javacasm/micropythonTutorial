@@ -11,7 +11,9 @@ TODO: ¿qué es micropython?
 ## Flasheando micropython
 
 En primer lugar vamos a flasher nuestro Wemos D1 Mini con el firmware de micropython 
-TODO: URL descarga
+
+Descargamos la versión adecuada de la [página de descargas de micropython para esp8266](https://micropython.org/download/esp8266/)
+
 
 Conectamos con un cable micro-USB
 
@@ -51,7 +53,7 @@ Pulsamos varias veces **Enter** y veremos que aparece en prompt de python
 Para poder acceder remotamente vía wifi activamos y configuramos **WebREPL** escribiendo en modo interactivo
 
 ```python
->>> import weprepl_setup
+>>> import webrepl_setup
 ```
 
 Contestamos a lo que nos pregunta, establecemos una contraseña de acceso y finalmente se resetea

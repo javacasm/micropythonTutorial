@@ -1,18 +1,25 @@
 import MyDateTime
 
 
-v = '1.2.3'
+v = '1.3.0'
 
 moduleName = 'Utils'
 
+logFile = 'log.txt'
 
-def myLog(msg):
+def myLog(msg, saveToFile = False):
     sDate = MyDateTime.getLocalTimeHumanFormat()
-    print(sDate + ' ' + msg)
+    totalMsg = sDate + ' ' + msg
+    print(totalMsg)
+    if saveToFile:
+        saveLogMsg(totalMsg)
     
 
 def identifyModule(module, version):
     myLog('Module ' + module + ' ' + version)
 
+def saveLogMsg(errorMsg):
+    with open(logFile, "a") as f:
+        f.write(errorMsg)
 
 identifyModule(moduleName, v)

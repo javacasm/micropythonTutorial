@@ -12,7 +12,10 @@
 ![](./images/pinout_m5stack.png)
 ![](./images/modelo_gris_m5stack.png)
 ![](./images/flier_m5stack.png)
-![](./images/.png)
+![](./images/m5Stack_pines.png)
+![](./images/m5Stack_pinout_names.png)
+![](./images/m5Stack_pinoutnames.png)
+![](./images/m5stack-info.jpg)
 
 
 ## Características
@@ -43,9 +46,22 @@ Tarjeta SD: de hasta 16Gb
 
 [Esquematico](https://github.com/m5stack/M5-Schematic/blob/master/Core/Basic/M5-Core-Schematic(20171206).pdf)
 
-## Micropython
+## Recursos
 
-https://github.com/m5stack/M5Stack_MicroPython
+[Modelos de m5Stack](https://docs.m5stack.com/#/)
+
+[Ejemplos 1](https://github.com/tuupola/micropython-m5stack)
+
+[M5Stack Micropython Base](https://github.com/m5stack/M5Stack_MicroPython)
+
+[M5Cloud para m5Stack](https://github.com/m5stack/M5Cloud#micropython-api)
+
+[M5Go](https://github.com/m5stack/M5GO)
+
+[Módulos para mycropython bare](https://github.com/lukasmaximus89/M5Stick-C-Micropython-1.12)
+
+[Uso de Thonny con micropython](https://raw.githubusercontent.com/Freenove/Freenove_Ultimate_Starter_Kit_for_ESP32/master/Python/Python_Tutorial.pdf)
+
 https://github.com/lukasmaximus89/M5Stack-Core-Micropython-1.12
 
 https://github.com/lukasmaximus89/M5Stick-C-Micropython-1.12

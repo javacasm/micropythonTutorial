@@ -12,7 +12,10 @@
 ![](./images/pinout_m5stack.png)
 ![](./images/modelo_gris_m5stack.png)
 ![](./images/flier_m5stack.png)
-![](./images/.png)
+![](./images/m5Stack_pines.png)
+![](./images/m5Stack_pinout_names.png)
+![](./images/m5Stack_pinoutnames.png)
+![](./images/m5stack-info.jpg)
 
 
 ## Características

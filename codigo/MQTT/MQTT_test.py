@@ -9,10 +9,10 @@ import machine
 import ntptime
 import time         # Para las esperas
 import utime
-import Wemos        # Facilita el identificar los pines
-import MeteoSalon   # Relacionado con los dispositivos conectados
-import NeoPixelTHO  # Relacioniado con el ledRGB
-import helpFiles    # para free y df
+#import Wemos        # Facilita el identificar los pines
+#import MeteoSalon   # Relacionado con los dispositivos conectados
+#import NeoPixelTHO  # Relacioniado con el ledRGB
+#import helpFiles    # para free y df
 import MyDateTime
 
 client_id = ubinascii.hexlify(machine.unique_id())
@@ -29,12 +29,12 @@ topic_subLedRGB = topic_sub + b'/ledRGB'
 topic_subData = topic_sub + b'/SensorData'
 topic_pub = b'hello'
 
-mqtt_server = '192.168.1.200'
+mqtt_server = '192.168.1.88'
 
 
 def sub_CheckTopics(topic, msg):
     print((topic, msg))
-    if topic == topic_subLed:     # Check for Led Topic
+"""    if topic == topic_subLed:     # Check for Led Topic
         if msg == b'On':
             print('Led:On')
             MeteoSalon.led.off()
@@ -45,7 +45,7 @@ def sub_CheckTopics(topic, msg):
         MeteoSalon.color(msg)
     elif topic == topic_subFree:        ## Check for free memory
         freeMem = helpFiles.free()
-        client.publish(topic_subMem, str(freeMem))
+        client.publish(topic_subMem, str(freeMem))"""
 
 def connect_and_subscribe():
     global client, client_id, mqtt_server, topic_sub, topic_subLedRGB, topic_subLed
@@ -66,7 +66,7 @@ def restart_and_reconnect():
     time.sleep(10)
     machine.reset()
 
-def mainBeta(everySeconds=60):
+def mainMQTT(everySeconds=60):
     print(MyDateTime.setRTC())
     connect_and_subscribe() # connect and get a client reference
     last_Temp = 0 # utime.ticks_ms()

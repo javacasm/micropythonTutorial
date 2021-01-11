@@ -596,6 +596,13 @@ print(r["main"]["temp"] - 273.15)
 It’s also possible to make more advanced requests, adding special headers
 
 
+## Otros componentes
+
+[I2C DHT12](https://github.com/mcauser/micropython-dht12)
+
+[I2C BMP280](https://github.com/Dafvid/micropython-bmp280)
+
+
 # Referencia
 
 [Referencia Wemos](https://docs.wemos.cc/en/latest/d1/index.html)

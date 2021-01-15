@@ -14,7 +14,7 @@ rps_img = (
 
 lcd.clear(lcd.WHITE)
 
-lcd.image(48, 200,  'img/rock_128.jpg', 2)
+lcd.image(48, 200,  'img/11aa.jpg', 2)
 lcd.image(143, 200, 'img/paper_128.jpg', 2)
 lcd.image(238, 200, 'img/scissors_128.jpg', 2)
 

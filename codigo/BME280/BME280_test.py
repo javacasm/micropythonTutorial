@@ -7,7 +7,7 @@ def testBME280():
     i2c = machine.I2C(sda = machine.Pin(Wemos.D2),scl = machine.Pin(Wemos.D1)) # configuramos el acceso al bus i2c 
     i2c.scan() # Comprobamos que se detecta el dispositivo en la direccion 0x76 (118) 
     bme = BME280.BME280(i2c = i2c, address=118) 
-    print('Temp: '+str(bme.temperature) + ' Pres: '+ str(bme.pressure) + ' Hum: '+str(bme.humidity)
+    print('Temp: '+str(bme.temperature) + ' Pres: '+ str(bme.pressure) + ' Hum: '+str(bme.humidity))
 
 
 def testBME280Wireless():

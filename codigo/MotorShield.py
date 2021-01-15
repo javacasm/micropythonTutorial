@@ -12,11 +12,12 @@ from machine import Pin, PWM
 # D3,GPIO 0 Direction A
 # D4,GPIO 2 Direction B
 
+v = '0.8'
 
 pwm_frequency = 750
 
 speed_STOP = 0
-speed_min = 150 # Depends on batteries state
+speed_min = 400 # Depends on batteries state
 speed_med = 600
 speed_max = 1023
 
@@ -32,27 +33,27 @@ def stop():
     speedB.duty(speed_STOP)
 
 
-def backward():
-    speedA.duty(current_speed)
-    speedB.duty(current_speed)
+def backward(speed = current_speed):
+    speedA.duty(speed)
+    speedB.duty(speed)
     dirA.off()
     dirB.off()
 
-def forward():
-    speedA.duty(current_speed)
-    speedB.duty(current_speed)
+def forward(speed = current_speed):
+    speedA.duty(speed)
+    speedB.duty(speed)
     dirA.on()
     dirB.on()
 
-def right():
-    speedA.duty(current_speed)
-    speedB.duty(current_speed)
+def right(speed = current_speed):
+    speedA.duty(speed)
+    speedB.duty(speed)
     dirA.off()
     dirB.on()
 
-def left():
-    speedA.duty(current_speed)
-    speedB.duty(current_speed)
+def left(speed = current_speed):
+    speedA.duty(speed)
+    speedB.duty(speed)
     dirA.on()
     dirB.off()
 

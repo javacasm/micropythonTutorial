@@ -2,7 +2,7 @@
 # basado en https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
 
-v = '1.5.10'
+v = '1.5.12'
 moduleName = 'MQTT_base'
 
 from Utils import identifyModule, myLog
@@ -26,7 +26,7 @@ client = None
 client_id = ubinascii.hexlify(machine.unique_id())
 
 def sub_CheckTopics(topic, msg):
-    print('Base:' + str((topic, msg)))
+    myLog('Base:' + str((topic, msg)))
 """    if topic == topic_subLed:     # Check for Led Topic
         if msg == b'On':
             print('Led:On')
@@ -40,7 +40,7 @@ def sub_CheckTopics(topic, msg):
         freeMem = helpFiles.free()
         client.publish(topic_subMem, str(freeMem))"""
 
-def connect_and_subscribe(topic2Subscribe,callbackFunc):
+def connect_and_subscribe(topics2Subscribe,callbackFunc):
     global client, client_id
     myLog('create client')
     client = MQTTClient(client_id, config.mqtt_server)
@@ -50,9 +50,10 @@ def connect_and_subscribe(topic2Subscribe,callbackFunc):
         myLog('Connecting to %s MQTT broker ' % (config.mqtt_server), saveToFile = True)
         client.connect()
         myLog('connected')
-        myLog('subscribe 2 ' + str(topic2Subscribe))
-        client.subscribe(topic2Subscribe)
-        myLog('Connected. Subscribed to ' + str(topic2Subscribe))
+        for topic in topics2Subscribe:
+            myLog('subscribe 2 ' + str(topic))
+            client.subscribe(topic)
+            myLog('Subscribed to ' + str(topic))
         return client
     except MQTTException as e:
         myLog('MQTT exception: ' + str(e), saveToFile = True)

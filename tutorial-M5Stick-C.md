@@ -141,3 +141,5 @@ https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/ota
 [Quick start](https://docs.m5stack.com/#/en/quick_start/m5stickc/m5stickc_quick_start_with_uiflow)
 
 [Micropython para M5Sstick](https://github.com/m5stack/M5Stack_MicroPython)
+
+[First steps with m5stick-c](https://www.hackster.io/glowascii/first-steps-with-m5stick-c-74804c)

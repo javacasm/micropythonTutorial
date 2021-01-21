@@ -46,6 +46,8 @@ Tarjeta SD: de hasta 16Gb
 
 [Esquematico](https://github.com/m5stack/M5-Schematic/blob/master/Core/Basic/M5-Core-Schematic(20171206).pdf)
 
+[Doc del LCD](https://community.m5stack.com/topic/69/micropython-on-webide-2-lcd-graphics)
+
 ## Recursos
 
 [Modelos de m5Stack](https://docs.m5stack.com/#/)

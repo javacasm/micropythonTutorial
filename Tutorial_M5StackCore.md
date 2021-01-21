@@ -73,3 +73,9 @@ https://github.com/m5stack/UIFlow-Code/wiki/Advanced
 [m5Stack SD updater](https://github.com/tobozo/M5Stack-SD-Updater)
 
 [Projects](https://www.hackster.io/m5stack/projects)
+
+[m5Edu](http://m5edu.com/)
+
+[Guía pedagógica de STEM de m5stack](https://tienda.bricogeek.com/download/PRO-0257/guia_pedagogica_stem_m5stack.pdf)
+
+[Documentación bricogeek](https://tienda.bricogeek.com/m5stack-esp32/1417-m5stack-esp32-basic-core-iot-kit.html)

@@ -30,7 +30,7 @@ def showLedRGBColor(c):
     neoP.write()
 
 def testLed():
-    showLedRGBColor(b'Blue')
+    showLedRGBColor(b'Green')
     showLedRGBColor(b'Red')
     showLedRGBColor(b'Black')
 

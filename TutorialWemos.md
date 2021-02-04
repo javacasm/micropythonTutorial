@@ -558,7 +558,44 @@ import os
 print(os.listdir())
 ```
 
+
+### Gestión de ficheros
+
+Podemos crea directorios con os.mkdir()
+
+Para mover ficheros entre directorios, sólo tenemos que cambiar el nombre
+
+Por ejemplos tenemos varios ficheros en el directorio raiz y queremos moverlos a un directorio 'prueba'
+
+
+```python
+import os
+
+def myMove(file,newDir):
+    """
+    funcion que hace un move de un fichero
+    """
+    if newDir[-1] != '/': # añadimos la barra
+        newDir += '/'
+    os.rename(file,newDir+file)
+
+myFiles = os.listdir() # nos devuelve una lista del estilo de ['MQTT_base.py', 'MQTT_test.py', 'MyDateTime.py', 'NeoPixelTHO.py', 'Utils.py','config.py', 'ds18x20.py', 'main_consola.py','test_lcd.py','umqttsimple.py']
+
+os.mkdir('prueba') # Creamos el directorio prueba con
+for file in myFiles:
+    myMove(file,'prueba')
+
+
+
+
+
+### Ficheros especiales: main y boo
+
 You should see something like ['boot.py'] – that’s a list with just one file name in it. boot.py and later main.py are two special files that are executed when the board starts. boot.py is for configuration, and you can put your own code in main.py.
+
+
+
+### Creación y lectura de ficheros
 
 You can create, write to and read from files like you would with normal Python:
 

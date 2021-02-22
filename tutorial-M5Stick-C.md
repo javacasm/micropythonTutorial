@@ -143,3 +143,11 @@ https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/ota
 [Micropython para M5Sstick](https://github.com/m5stack/M5Stack_MicroPython)
 
 [First steps with m5stick-c](https://www.hackster.io/glowascii/first-steps-with-m5stick-c-74804c)
+
+### Proyectos
+
+#### [Robot equilibrista](https://m5stack.com/collections/m5-application/products/bala-c-esp32-development-mini-self-balancing-car)
+
+![](https://cdn.shopify.com/s/files/1/0056/7689/2250/products/1_32551c59-c5e2-4213-a850-2fa988c673b5_1200x1200.jpg?v=1590970987)
+
+[Código](https://github.com/m5stack/M5-ProductExampleCodes/blob/master/App/BalaC/Arduino/Balac/Balac.ino)

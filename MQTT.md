@@ -102,6 +102,12 @@ Command para peticiones ¿request?
 Stat para confirmaciones de estados
 
 
+## Seguridad
+
+https://github.com/CrazyRobMiles/MQTT-security/tree/main/Password%20Protected%20MQTT
+
+HS magazine 40 pag 78
+
 
 
 ## Recursos

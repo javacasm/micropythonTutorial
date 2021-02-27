@@ -151,3 +151,18 @@ https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/ota
 ![](https://cdn.shopify.com/s/files/1/0056/7689/2250/products/1_32551c59-c5e2-4213-a850-2fa988c673b5_1200x1200.jpg?v=1590970987)
 
 [Código](https://github.com/m5stack/M5-ProductExampleCodes/blob/master/App/BalaC/Arduino/Balac/Balac.ino)
+
+
+### Ejemplos
+
+[Neopixels](https://m5stack.hackster.io/ronfrtek/m5stickc-esp32-and-neopixels-led-ring-random-color-03d508)
+
+[Text scrooling](https://m5stack.hackster.io/hague/m5stickc-textbuffer-scrolling-display-fb6428)
+
+[Fire effect (micropython)](https://www.hackster.io/remixer-dec/9-micropython-mini-projects-for-m5stickc-c07eb1)
+
+[Fire effect (C++)](https://m5stack.hackster.io/MajorSnags/m5stickc-flame-demo-ee6672)
+
+[Web server](https://www.hackster.io/lukasmaximus89/m5stack-micropython-simple-web-server-20a4c4)
+
+[Juego snake](https://github.com/remixer-dec/M5Stack_Experiments/tree/master/M5StickC/UIFlow/Snake)

@@ -29,7 +29,6 @@ Plataformas de desarrollo: UIFlow, MicroPython, Arduino
 ![](./images/m5stickC_pinout.png)
 
 
-
 |ESP32|pin|
 |---|---|
 |Led rojo|GPIO10
@@ -70,6 +69,16 @@ SDA|	GPIO21
 RTC - BM8563
 
 
+## Pinout
+
+There are five IO pins available:
+0: ADC, PWM, touch, has the microphone connected to it
+26: ADC, PWM, DAC
+32: ADC, PWM, touch, I2C, on the Grove connector
+33: ADC, PWM, touch, I2C, on the Grover connector
+36: ADC, PWM, input only,  has the ESP’s hall effect sensor connected to it.
+
+
 ## Modelo 2019
 
 [Producto](https://docs.m5stack.com/#/en/core/m5stickc)
@@ -104,6 +113,8 @@ Battery	120 mAh @ 3.7V
 [Pinmap](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/schematic/Core/M5StickC/20191118__StickC_A04_3110_Schematic_Rebuild_PinMap.pdf)
 
 ## Recursos
+
+https://tinkerfarm.net/projects/the-m5stickc/
 
 [Proyectos en Hackster.io](M5stack.hackster.io/)
 

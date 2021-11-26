@@ -587,9 +587,15 @@ for file in myFiles:
 
 
 
+Para saber el tamaño:
+import os
+size = os.stat('log.txt')[6]
 
 
-### Ficheros especiales: main y boo
+https://docs.micropython.org/en/latest/library/uos.html?highlight=os%20stat#uos.stat
+
+
+### Ficheros especiales: main y boot
 
 You should see something like ['boot.py'] – that’s a list with just one file name in it. boot.py and later main.py are two special files that are executed when the board starts. boot.py is for configuration, and you can put your own code in main.py.
 

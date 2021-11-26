@@ -1,10 +1,12 @@
-import machine, neopixel
-import Wemos
-
 v = '1.8'
 moduleName = 'caldera_test'
 from Utils import identifyModule, myLog
 identifyModule(moduleName,  v)
+
+import machine, neopixel
+import Wemos
+
+
 
 # Using a wemos https://escapequotes.net/wp-content/uploads/2016/02/esp8266-wemos-d1-mini-pinout.png
 

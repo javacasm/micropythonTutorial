@@ -4,6 +4,9 @@
 # https://forum.micropython.org/viewtopic.php?t=1940
 
 v = '1.3.5'
+module = 'WebServerControlRele'
+from Utils import myLog, identifyModule
+identifyModule(moduleName, v)
 
 try:
     import usocket as socket
@@ -14,16 +17,11 @@ import gc
 
 import machine, network
 
-import myDateTime
+import MyDateTime
 import helpFiles
 import Wemos
 import caldera_test
 import Wemos
-
-moduleName = 'WebServerControlRele'
-from Utils import identifyModule
-myLog(moduleName, v)
-
 
 def web_page():
     releLocal = machine.Pin(Wemos.D1,machine.Pin.OUT)  # Rele shield en D1 (GPIO5)

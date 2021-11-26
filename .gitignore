@@ -6,4 +6,6 @@ calibracionBateria.ods
 .gitignore
 codigo/m5stack/bare/micropython-ili9341
 codigo/m5stack/bare/micropython-ili9341-master
-
+guia_pedagogica_stem_m5stack.pdf
+.gitignore
+codigo/rpi_pico/RPI-PICO-I2C-LCD-main/README.md

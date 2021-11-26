@@ -1,9 +1,9 @@
 
-v = '0.2'
-moduleName = 'controlCaldera'
+v = '0.3'
+moduleName = 'config_controlCaldera'
 
 from Utils import identifyModule
 identifyModule(moduleName, v)
 
 
-MQTT_SERVER = '192.168.1.88'
+MQTT_SERVER = '192.168.1.136'

@@ -3,6 +3,10 @@
 
 v = '1.2.14'
 
+moduleName = 'MQTT_caldera'
+from Utils import myLog, identifyModule
+identifyModule(moduleName, v)
+
 from umqttsimple import MQTTClient
 import ubinascii
 import machine
@@ -15,9 +19,7 @@ import caldera_test
 import MyDateTime
 import config
 
-moduleName = 'MQTT_caldera'
-from Utils import myLog, identifyModule
-identifyModule(moduleName, v)
+
 
 client_id = ubinascii.hexlify(machine.unique_id())
 

@@ -1,9 +1,7 @@
-import MyDateTime
-
-
-v = '1.3.6'
-
+v = '1.3.7'
 moduleName = 'Utils'
+
+import MyDateTime
 
 logFile = 'log.txt'
 

@@ -6,7 +6,7 @@ import utime
 
 # DateTime utility
 
-v = '1.3.6'
+v = '1.3.7'
 moduleName = 'MyDateTime'
 
 # No usamos Utils porque depende de MyDateTime
@@ -17,7 +17,7 @@ def setRTC():
     return getLocalTimeHumanFormat()
 '''
 def getLocalTimeHumanFormat():
-    strLocalTime = "{0}/{1:02}/{2:02} {3:02}:{4:02}:{5:02}".format(*utime.localtime(utime.time()+3600)[0:6])
+    strLocalTime = "{0}/{1:02}/{2:02} {3:02}:{4:02}:{5:02}".format(*utime.localtime(utime.time())[0:6])
     return strLocalTime
 
 sDate = getLocalTimeHumanFormat()

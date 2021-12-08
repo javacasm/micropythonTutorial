@@ -5,6 +5,9 @@ GPIO2
 TX
 RX
 
+
+![](./images/ESP-01-ESP8266-pinout-gpio-pin.png)
+
 ## Shields
 
 ### Sensor de temperatura ds18b20 (GPIO2)
@@ -22,6 +25,20 @@ RX
 ### Led RGB neopixel (GPIO2)
 
 [Esquemático](https://github.com/IOT-MCU/ESP-01S-RGB-LED-v1.0/blob/master/ESP-01S%20RGB%20LED%20v1.0.zip)
+
+## Módulos
+
+[Módulo con rele](https://www.instructables.com/ESP0101S-RELAY-MODULE-TUTORIAL/)
+
+Relé en GPIO00
+
+![](./images/ModuloRele.jpg)
+
+[Módulo con DHT11](https://www.makerfabs.com/esp-01-dht11-module.html)
+
+DHT11 en GPIO02
+
+![](./images/ESP-01S DHT11 Module_3-1000x750.jpg)
 
 ## Referencia
 

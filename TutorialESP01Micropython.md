@@ -38,7 +38,7 @@ Relé en GPIO00
 
 DHT11 en GPIO02
 
-![](./images/ESP-01S DHT11 Module_3-1000x750.jpg)
+![](./images/ESP-01S_DHT11_Module_3-1000x750.jpg)
 
 ## Referencia
 

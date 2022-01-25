@@ -6,8 +6,6 @@ TODO: Descripción de Wemos ¿Memoria? ¿coste?
 
 Basado en ESP12
 
-TODO: ¿qué es micropython?
-
 ## Flasheando micropython
 
 En primer lugar vamos a flasher nuestro Wemos D1 Mini con el firmware de micropython 
